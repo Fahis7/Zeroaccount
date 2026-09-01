@@ -1,0 +1,10 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .mark { stroke: #1A1C1E; }
+    @media (prefers-color-scheme: dark) {
+      .mark { stroke: #FFFFFF; }
+    }
+  </style>
+  <circle class="mark" cx="24" cy="24" r="17" stroke-width="4"/>
+  <line class="mark" x1="8" y1="40" x2="40" y2="8" stroke-width="4"/>
+</svg>

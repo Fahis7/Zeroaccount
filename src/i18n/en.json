@@ -1,0 +1,418 @@
+{
+  "common": {
+    "faqHeading": "Frequently Asked Questions"
+  },
+  "whatsappMessage": "Hello Zero Accounting,\n\nI visited your website and I'm interested in learning more about your services. Could we schedule a free consultation?\n\nThank you.",
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "cta": "Contact Us"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Abu Dhabi & Dubai's Trusted Firm",
+      "lines": ["PRECISION ACCOUNTING,", "ZERO COMPROMISE"],
+      "subtitle": "We bring clarity to your finances with rigorous auditing, seamless VAT compliance, and strategic advisory — so you can focus on building what matters.",
+      "cta1": "Book a Consultation",
+      "cta2": "Explore Services",
+      "stat1Label": "Happy Clients",
+      "stat2Label": "Years Experience",
+      "stat3Label": "Client Retention"
+    },
+    "trusted": { "label": "Trusted by" },
+    "services": {
+      "label": "What We Do",
+      "heading": "Solutions that fuel your growth",
+      "subtitle": "From day-to-day bookkeeping to strategic financial planning, our services are built for businesses operating in the UAE.",
+      "learnMore": "Learn more",
+      "items": [
+        { "title": "Accounting & Bookkeeping", "description": "Accurate, real-time financial records maintained by experts. We keep your books clean so your business decisions stay informed." },
+        { "title": "VAT Consulting", "description": "Navigate UAE tax regulations with confidence. We handle VAT registration, filing, and compliance so you stay ahead of every deadline." },
+        { "title": "Auditing & Assurance", "description": "Independent, transparent audits that give stakeholders confidence. We examine every detail with a commitment to full clarity." },
+        { "title": "ICV Certification", "description": "Maximize your In-Country Value score with our certified assessments. We help you meet government procurement requirements seamlessly." },
+        { "title": "Payroll Services", "description": "Timely, accurate payroll processing that keeps your team happy and your records compliant with WPS and UAE labour law." },
+        { "title": "Business Consultancy & PRO", "description": "From company formation to visa processing, our PRO and consultancy services smooth the path for doing business in the UAE." }
+      ]
+    },
+    "why": {
+      "label": "Why Zero",
+      "heading": "Built on precision, driven by trust",
+      "items": [
+        { "title": "Zero Errors, Always", "description": "Every figure is verified, every filing is cross-checked. We hold ourselves to a standard where mistakes simply aren't acceptable." },
+        { "title": "Real-Time Visibility", "description": "Access your financial data whenever you need it. Our digital-first approach means your numbers are always up-to-date and a click away." },
+        { "title": "UAE Compliance Experts", "description": "Deep expertise in local regulations, VAT, corporate tax, and free zone requirements — we speak the language of UAE business law." }
+      ]
+    },
+    "process": {
+      "label": "How It Works",
+      "heading": "Getting started is simple",
+      "subtitle": "A clear, straightforward process from your first call to full financial clarity.",
+      "steps": [
+        { "title": "Discovery Call", "description": "We learn about your business, understand your challenges, and identify what you need." },
+        { "title": "Custom Plan", "description": "We design a tailored service package that fits your operations and budget." },
+        { "title": "Onboarding", "description": "Seamless handoff — we integrate with your systems and start managing your finances." },
+        { "title": "Ongoing Support", "description": "Regular reporting, proactive advice, and a dedicated team always a message away." }
+      ]
+    },
+    "stats": {
+      "items": [
+        { "label": "Clients Served" },
+        { "label": "Industries Covered" },
+        { "label": "Team Members" },
+        { "label": "Compliance Rate" }
+      ]
+    },
+    "testimonials": {
+      "label": "Client Stories",
+      "heading": "Trusted across industries",
+      "subtitle": "Hear from the businesses we've helped navigate the financial landscape of the UAE.",
+      "items": [
+        { "name": "Patrick", "role": "HR Coordinator", "quote": "Zero Accounting completely transformed our payroll process. What used to take our team days now runs smoothly with zero issues. They're responsive, thorough, and genuinely care." },
+        { "name": "Ahmed", "role": "Compliance Officer", "quote": "Their ICV Certification support was instrumental in helping us qualify for major government contracts. The team guided us through every step with deep expertise." },
+        { "name": "Emma", "role": "Director of Operations", "quote": "The level of transparency in their auditing process is unmatched. We always know exactly where we stand, and that confidence has been invaluable for our board and investors." },
+        { "name": "Ravi Mehta", "role": "Finance Manager", "quote": "Switching to Zero Accounting was one of the best decisions we made. Our books are always clean, VAT filings are handled on time, and the advisory support keeps us ahead." }
+      ]
+    },
+    "cta": {
+      "label": "Ready to Start?",
+      "lines": ["LET'S BRING CLARITY", "TO YOUR FINANCES"],
+      "subtitle": "Book a free consultation and discover how Zero Accounting can simplify your financial operations across the UAE.",
+      "button": "Talk to Us Today"
+    }
+  },
+  "about": {
+    "hero": {
+      "lines": ["YOUR TRUSTED", "PARTNER FOR", "COMPREHENSIVE", "BUSINESS SOLUTIONS"],
+      "breadcrumb": "About Us"
+    },
+    "whoWeAre": {
+      "label": "Our Story",
+      "heading": ["WHO", "WE ARE"],
+      "body": "Based in Abu Dhabi, Zero Accounting is committed to empowering businesses with innovative, reliable, and strategic solutions. Our focus spans Business Consulting, Market Entry Strategy, Compliance, Technology, and Financial Advisory. We help clients develop sustainable strategies that drive real transformation by leveraging deep knowledge of the UAE market and personalized service delivery."
+    },
+    "whatSetsUsApart": {
+      "label": "Our Difference",
+      "heading": ["WHAT SETS", "US APART"],
+      "items": [
+        { "title": "Tailored Solutions", "description": "We understand individual client needs to develop customized approaches aligned with your business objectives." },
+        { "title": "Local Expertise", "description": "Our team combines local insights and international best practices to support clients throughout their growth journey." },
+        { "title": "Client-First Culture", "description": "We prioritize long-term partnerships, viewing client success as our primary success metric." }
+      ]
+    },
+    "cta": {
+      "heading": ["NEED HELP WITH", "YOUR FINANCES?"],
+      "subtitle": "Get in touch today and let's discuss how Zero Accounting can support your business.",
+      "button": "Get in Touch"
+    }
+  },
+  "services": {
+    "accounting": {
+      "hero": {
+        "lines": ["BEST ACCOUNTING", "& BOOKKEEPING", "SERVICES IN", "ABU DHABI & DUBAI"],
+        "breadcrumb": "Accounting & Bookkeeping"
+      },
+      "intro": {
+        "heading": ["ACCOUNTING &", "BOOKKEEPING"],
+        "paragraphs": [
+          "Zero Accounting specializes in data-driven insights, accounting and bookkeeping services, and financial advice. With over a decade of experience serving small-to-medium businesses across the UAE, our team of qualified accountants, auditors, and VAT consultants focuses on your financial stability and growth.",
+          "We go beyond number management to provide strategic insights and financial expertise. Our services include comprehensive accounting, bookkeeping, VAT consultation, and internal auditing."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": ["WHY", "OUTSOURCE"],
+          "columns": 3,
+          "items": [
+            { "title": "Data Security & Confidentiality", "description": "Your financial data is protected with enterprise-grade security protocols." },
+            { "title": "Focus on Core Business", "description": "Free your team from bookkeeping burdens to focus on what matters most." },
+            { "title": "Cost Savings", "description": "Reduce overhead by outsourcing to experienced professionals." },
+            { "title": "Advanced Accounting Tools", "description": "We leverage modern accounting software for accuracy and efficiency." },
+            { "title": "Timely Compliance Reminders", "description": "Never miss a filing deadline with our proactive compliance alerts." },
+            { "title": "Improved Financial Insights", "description": "Gain clarity on your financial position with detailed reporting and analysis." }
+          ]
+        }
+      ],
+      "faq": [
+        { "question": "What bookkeeping services are provided?", "answer": "Our services are customized monthly packages including record management, account reconciliation, transaction review, and financial report preparation. Scope adjusts based on your business needs." },
+        { "question": "Do you need both a bookkeeper and accountant?", "answer": "Yes — bookkeepers handle daily transaction recording and account maintenance, while accountants analyze records, prepare tax returns, and provide strategic planning." },
+        { "question": "How is pricing structured?", "answer": "We use a monthly flat-fee model billed in advance for regular clients, ensuring full budget transparency." },
+        { "question": "What's the price range?", "answer": "Packages are customized based on your specific needs and activity volume. Contact us for a tailored quote." }
+      ],
+      "cta": "Need help with your accounting? Get in touch today"
+    },
+    "vat": {
+      "hero": {
+        "lines": ["TAX & VAT", "CONSULTING", "SERVICES"],
+        "breadcrumb": "VAT Consulting"
+      },
+      "intro": {
+        "heading": ["VAT", "CONSULTING"],
+        "paragraphs": [
+          "Ensure compliance and gain a strategic edge by outsourcing your tax and VAT consulting needs. Navigating UAE's tax and VAT regulations can be complex, but with a robust system in place, businesses can confidently adhere to legal requirements while optimizing tax efficiency.",
+          "By choosing Zero Accounting, you benefit from a team of experienced consultants who specialize in UAE tax laws, VAT compliance, and strategic tax planning to support your business's financial health."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": ["WHY", "OUTSOURCE"],
+          "columns": 3,
+          "items": [
+            { "title": "In-Depth Compliance Knowledge", "description": "Deep expertise in UAE VAT regulations and international tax standards." },
+            { "title": "Focus on Core Business", "description": "Let experts handle the complexity while you focus on growth." },
+            { "title": "Cost Savings", "description": "Avoid penalties and optimize your tax position with strategic planning." },
+            { "title": "Advanced Tax Planning Tools", "description": "Leverage modern technology for accurate tax calculations and forecasting." },
+            { "title": "Timely Compliance Reminders", "description": "Stay ahead of every VAT filing deadline with proactive alerts." },
+            { "title": "Enhanced Financial Planning", "description": "Integrate tax strategy into your broader financial planning." }
+          ]
+        }
+      ],
+      "faq": [
+        { "question": "What type of tax and VAT consulting services do you offer?", "answer": "We provide a full suite including VAT registration, filing, advisory, compliance reviews, and strategic tax planning tailored to your business." },
+        { "question": "Do I need VAT consulting if my business is small?", "answer": "Yes, even small businesses benefit. VAT regulations apply to businesses of various sizes, and ensuring compliance from the start can prevent penalties." },
+        { "question": "How are your services billed?", "answer": "We offer both flat-fee packages and customized billing options based on the complexity and frequency of services needed." },
+        { "question": "What is the price range?", "answer": "Pricing depends on your specific requirements and volume of services. Contact us for a personalized quote." }
+      ],
+      "cta": "Need help with your VAT filing? Get in touch today"
+    },
+    "auditing": {
+      "hero": {
+        "lines": ["BEST AUDITING", "& ASSURANCE", "SERVICES IN", "ABU DHABI & DUBAI"],
+        "breadcrumb": "Auditing & Assurance"
+      },
+      "intro": {
+        "heading": ["AUDITING &", "ASSURANCE"],
+        "paragraphs": [
+          "Businesses in Abu Dhabi, Dubai, Sharjah, and Ras Al Khaimah must ensure strict compliance to maintain profitability and reputation. The increasing complexity of auditing and assurance requirements underscores the need for expert guidance.",
+          "Non-compliance with corporate laws and international accounting standards can result in penalties, fraud risks, and a loss of stakeholder trust. Zero Accounting specializes in comprehensive auditing and assurance services, offering tailored solutions that enhance compliance, improve financial transparency, and boost stakeholder confidence."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": ["KEY", "BENEFITS"],
+          "columns": 3,
+          "items": [
+            { "title": "Regulatory Compliance", "description": "Adhere to UAE regulations and international accounting standards to avoid fines and legal issues." },
+            { "title": "Fraud Detection & Risk Mitigation", "description": "Identify fraudulent activities and irregularities before they impact your business." },
+            { "title": "Enhanced Internal Controls", "description": "Implement robust quality controls with actionable recommendations for improvement." },
+            { "title": "Increased Financial Transparency", "description": "Build trust with accurate and reliable financial statements." },
+            { "title": "Strengthened Stakeholder Confidence", "description": "Foster stronger relationships with stakeholders through transparency and compliance." }
+          ]
+        },
+        {
+          "type": "text",
+          "heading": ["LEVERAGING", "TECHNOLOGY FOR", "BETTER ASSURANCE"],
+          "body": "We use advanced Data and Analytics tools to support our auditing and assurance services. These technologies streamline financial analysis, improve risk identification, and deliver real-time insights tailored to your business."
+        },
+        {
+          "type": "grid",
+          "heading": ["WHY", "OUTSOURCE"],
+          "columns": 3,
+          "items": [
+            { "title": "Compliance Expertise", "description": "Stay aligned with UAE regulations and international accounting standards without building an in-house audit function." },
+            { "title": "Increased Stakeholder Confidence", "description": "Independent verification gives investors, lenders, and partners confidence in your numbers." },
+            { "title": "Risk Mitigation", "description": "Identify control weaknesses and financial risks before they become costly problems." },
+            { "title": "Efficiency and Accuracy", "description": "Experienced auditors complete engagements faster and with fewer follow-up queries." },
+            { "title": "Tailored Audit Solutions", "description": "Audit scope and methodology adapted to your industry and business complexity." },
+            { "title": "Objective Business Insights", "description": "An outside perspective on your financial operations that internal teams often miss." }
+          ]
+        }
+      ],
+      "faq": [
+        { "question": "What types of audits do you perform?", "answer": "We offer statutory audits, internal audits, compliance audits, and specialized audits for various industries. Our audits are tailored to meet both local and international standards." },
+        { "question": "How can auditing benefit my business?", "answer": "Beyond regulatory compliance, our services enhance financial transparency, boost investor confidence, and reveal insights into potential cost-saving areas or risk factors." },
+        { "question": "How are audit services priced?", "answer": "Fees are determined by scope and complexity. We offer both fixed and customized pricing options, ensuring a clear understanding of costs upfront." },
+        { "question": "How often should my business undergo an audit?", "answer": "Most companies benefit from an annual audit, but we also offer periodic reviews and internal audits for ongoing assurance." }
+      ],
+      "cta": "Need help with your auditing? Get in touch today"
+    },
+    "icv": {
+      "hero": {
+        "lines": ["IN-COUNTRY", "VALUE", "CERTIFICATION"],
+        "breadcrumb": "ICV Certification"
+      },
+      "intro": {
+        "heading": ["ICV", "CERTIFICATION"],
+        "paragraphs": [
+          "Strengthen your business's credibility and regulatory compliance with professional ICV certification services. In today's competitive landscape, the In-Country Value certification is essential for businesses seeking government contracts in the UAE.",
+          "By partnering with Zero Accounting, you gain access to a team of skilled professionals who bring in-depth knowledge of UAE's ICV requirements, delivering insights that go beyond numbers."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": ["KEY", "BENEFITS"],
+          "columns": 2,
+          "items": [
+            { "title": "Priority in Government Contracts", "description": "Certified ICV scores give your business a competitive edge in public sector procurement." },
+            { "title": "Enhanced Local Partnerships", "description": "Demonstrate your commitment to the UAE economy and build stronger local relationships." },
+            { "title": "Increased Local Impact", "description": "Contribute to economic development through local sourcing and workforce development." },
+            { "title": "Financial & Operational Insights", "description": "Gain clarity on how to optimize your local value contribution." }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": ["SERVICE", "ADVANTAGES"],
+          "columns": 3,
+          "items": [
+            { "title": "Expert Guidance", "description": "Our team understands the ICV framework inside and out." },
+            { "title": "Detailed ICV Assessment", "description": "Comprehensive evaluation of your current ICV standing." },
+            { "title": "Tailored Improvement Strategies", "description": "Custom recommendations to maximize your ICV score." },
+            { "title": "Efficient Certification Process", "description": "Streamlined procedures to get you certified quickly." },
+            { "title": "Compliance & Reporting Support", "description": "Ongoing guidance for re-certification and compliance." }
+          ]
+        }
+      ],
+      "faq": [
+        { "question": "What is ICV Certification, and why is it important?", "answer": "The In-Country Value Certification is a UAE government initiative to promote local economic contributions. It prioritizes businesses that support the UAE economy through local sourcing, workforce development, and other key metrics, offering certified companies a competitive edge in public sector contracts." },
+        { "question": "How can my business improve its ICV score?", "answer": "ICV scores depend on local sourcing, Emiratization, and local investment. We assess your current standing and recommend strategic improvements in supplier sourcing, workforce development, and operational spending." },
+        { "question": "What is the ICV certification process with Zero Accounting?", "answer": "Our service includes an initial consultation, a comprehensive evaluation to maximize your score, and step-by-step support through the certification application. We also offer ongoing guidance for re-certification." },
+        { "question": "How long does the process take?", "answer": "Timeline varies based on business readiness and documentation. Our streamlined procedures ensure the fastest possible turnaround." }
+      ],
+      "cta": "Need help with your ICV Certification? Get in touch today"
+    },
+    "payroll": {
+      "hero": {
+        "lines": ["PAYROLL", "SERVICES"],
+        "breadcrumb": "Payroll Services"
+      },
+      "intro": {
+        "heading": ["PAYROLL", "SERVICES"],
+        "paragraphs": [
+          "Efficient and accurate payroll management is crucial to running a successful business. Outsourcing your payroll to Zero Accounting ensures compliance with UAE labor laws, eliminates administrative burdens, and maintains timely, error-free payments to your team.",
+          "Our solutions are tailored to fit the unique needs of each client, whether a small business or a large organization."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": ["WHY", "OUTSOURCE"],
+          "columns": 3,
+          "items": [
+            { "title": "Accurate & Timely Processing", "description": "Never miss a pay cycle. We ensure every salary, benefit, and deduction is calculated correctly and on time." },
+            { "title": "UAE Labor Law Compliance", "description": "Full adherence to UAE employment regulations and requirements." },
+            { "title": "Customized Solutions", "description": "Payroll packages tailored to your business size and structure." },
+            { "title": "Confidentiality & Data Security", "description": "Enterprise-grade protection for all employee and financial data." },
+            { "title": "Cost-Efficient & Scalable", "description": "Solutions that grow with your team without growing your overhead." }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": ["SERVICES", "OFFERED"],
+          "columns": 3,
+          "items": [
+            { "title": "Monthly Payroll Processing", "description": "Timely and accurate calculation of salaries, benefits, deductions, and allowances." },
+            { "title": "Employee Onboarding & Offboarding", "description": "Complete management of payroll setup for new hires and final settlements for departures." },
+            { "title": "WPS Compliance", "description": "Full compliance with UAE's Wage Protection System, ensuring all salaries are processed according to UAE labor regulations." },
+            { "title": "Payroll Reporting & Analysis", "description": "Detailed reports and insights into your payroll costs and trends." },
+            { "title": "End-of-Service Benefits Calculation", "description": "Accurate computation of gratuity and end-of-service entitlements." }
+          ]
+        },
+        {
+          "type": "grid",
+          "heading": ["ADDITIONAL", "BENEFITS"],
+          "columns": 2,
+          "items": [
+            { "title": "Reduced Administrative Burden", "description": "Free your HR team from manual payroll runs, spreadsheets, and reconciliation work every month." },
+            { "title": "Improved Employee Satisfaction", "description": "Employees are paid accurately and on time, every time, building trust across your organization." },
+            { "title": "Risk Mitigation", "description": "Reduce the risk of compliance breaches, calculation errors, and missed statutory deadlines." },
+            { "title": "Enhanced Security & Confidentiality", "description": "Sensitive salary and employee data is handled under strict confidentiality and security protocols." }
+          ]
+        }
+      ],
+      "faq": [
+        { "question": "How does outsourcing payroll benefit my business?", "answer": "Outsourcing reduces administrative overhead, ensures compliance with labor laws, and eliminates the risk of payroll errors." },
+        { "question": "What information do you need from us?", "answer": "Typically, we require employee data, salary details, benefits, and allowances." },
+        { "question": "Are your services WPS compliant?", "answer": "Yes, our payroll services are fully compliant with the UAE's Wage Protection System." },
+        { "question": "Can you handle all business sizes?", "answer": "Absolutely. Our payroll services are designed to be flexible and scalable for businesses of any size." }
+      ],
+      "cta": "Need help with your payroll? Get in touch today"
+    },
+    "consultancy": {
+      "hero": {
+        "lines": ["BUSINESS", "CONSULTANCY", "& PRO SERVICES"],
+        "breadcrumb": "Business Consultancy & PRO"
+      },
+      "intro": {
+        "heading": ["BUSINESS CONSULTANCY", "& PRO SERVICES"],
+        "paragraphs": [
+          "Navigating the regulatory landscape in the UAE can be challenging without the right support. Zero Accounting specializes in comprehensive business consultancy and PRO services across Abu Dhabi and the UAE.",
+          "Each business faces unique requirements and hurdles when establishing and maintaining its presence in the UAE. Our team handles the regulatory and governmental processes so you can focus on growing your business."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": ["SERVICES", "OFFERED"],
+          "columns": 4,
+          "items": [
+            { "title": "PRO Services", "description": "Comprehensive support for handling government-related paperwork, saving time and ensuring compliance." },
+            { "title": "DED Assistance", "description": "Facilitation of licensing, renewals, and amendments through the Department of Economic Development." },
+            { "title": "Chamber of Commerce", "description": "Support for membership applications, documentation, and compliance requirements." },
+            { "title": "Municipality Approvals", "description": "Assistance with obtaining essential permits and approvals from local municipalities." },
+            { "title": "Immigration & Labor", "description": "Full management of visas, contracts, renewals, and cancellations." },
+            { "title": "Document Typing", "description": "Efficient and accurate typing services for all official documents." },
+            { "title": "Certificate Attestation", "description": "Fast and secure attestation services for certificates required for business or personal use." },
+            { "title": "Document Clearing", "description": "Submission, tracking, and follow-ups with government authorities on your behalf." }
+          ]
+        }
+      ],
+      "faq": [],
+      "cta": "Need help with government paperwork? Get in touch today"
+    }
+  },
+  "contact": {
+    "hero": { "lines": ["CONTACT", "US"], "breadcrumb": "Contact" },
+    "heading": ["GET IN", "TOUCH"],
+    "subtitle": "Have a question or ready to get started? Reach out and our team will respond within one business day.",
+    "form": {
+      "heading": "Schedule a Free Consultation",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "namePlaceholder": "Your full name",
+      "emailPlaceholder": "you@company.com",
+      "phonePlaceholder": "+971 50 000 0000",
+      "subjectPlaceholder": "How can we help?",
+      "messagePlaceholder": "Tell us about your business and what you need.",
+      "success": "Thank you — your message has been sent. We'll be in touch shortly."
+    },
+    "info": {
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "locationLabel": "Location",
+      "whatsappLabel": "WhatsApp",
+      "location": "Khalifa Complex B, Mezzanine Floor, Opposite Abu Dhabi Mall, Abu Dhabi, UAE"
+    }
+  },
+  "blog": {
+    "hero": { "lines": ["OUR", "BLOG"], "breadcrumb": "Blog" },
+    "readMore": "Read More",
+    "posts": [
+      { "title": "Tax Season Preparation Tips in UAE", "excerpt": "A practical checklist to get your business ready for VAT and corporate tax filing season without last-minute stress.", "date": "March 2026" },
+      { "title": "Why Regular Audits Are Essential", "excerpt": "Beyond compliance — how periodic auditing strengthens internal controls and builds stakeholder trust year-round.", "date": "February 2026" },
+      { "title": "Effective Financial Planning for Startups", "excerpt": "The foundational financial habits every UAE startup needs to build sustainable, fundable growth.", "date": "January 2026" }
+    ]
+  },
+  "footer": {
+    "description": "Your partner in precision and compliance. We provide world-class accounting, auditing, and advisory services to businesses across Abu Dhabi and Dubai.",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "contactTitle": "Get in Touch",
+    "companyLinks": [
+      { "label": "About Us", "path": "/about" },
+      { "label": "Blog", "path": "/blog" },
+      { "label": "Contact", "path": "/contact" }
+    ],
+    "copyright": "© 2026 Zero Accounting. All rights reserved.",
+    "tagline": "PRECISION. COMPLIANCE. TRUST."
+  }
+}

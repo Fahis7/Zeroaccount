@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent-rgb: 26 28 30; /* #1A1C1E — near-black accent, light mode */
+    --accent-deep-rgb: 0 0 0; /* pure black hover state, light mode */
+    --accent-contrast-rgb: 255 255 255; /* text/icon color on top of the accent, light mode */
+    --wash-alpha: 0.05;
+    --glow-ring-alpha: 0.2;
+    --glow-spread-alpha: 0.3;
+  }
+  .dark {
+    --accent-rgb: 255 255 255; /* white accent, dark mode */
+    --accent-deep-rgb: 232 234 237; /* #E8EAED soft white hover, dark mode */
+    --accent-contrast-rgb: 13 15 18; /* #0D0F12 — text/icon color on top of the accent, dark mode */
+    --wash-alpha: 0.06;
+    --glow-ring-alpha: 0.2;
+    --glow-spread-alpha: 0.15;
+  }
+  /* Hero, PageHero, CTA and Process are always-dark sections regardless of the
+     light/dark toggle — force the white-on-dark accent pairing locally so the
+     accent never goes black-on-black when the site is in light mode. */
+  .on-dark {
+    --accent-rgb: 255 255 255;
+    --accent-deep-rgb: 232 234 237;
+    --accent-contrast-rgb: 13 15 18;
+    --wash-alpha: 0.08;
+    --glow-ring-alpha: 0.2;
+    --glow-spread-alpha: 0.15;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-body bg-surface text-ink antialiased dark:bg-[#0D0F12] dark:text-[#E8EAED];
+    line-height: 1.7;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display uppercase;
+    line-height: 0.98;
+    letter-spacing: 0.01em;
+  }
+  :root[dir="rtl"] body {
+    font-family: "Noto Kufi Arabic", "Manrope", system-ui, sans-serif;
+    line-height: 1.8;
+    letter-spacing: normal;
+  }
+  :root[dir="rtl"] h1,
+  :root[dir="rtl"] h2,
+  :root[dir="rtl"] h3,
+  :root[dir="rtl"] h4 {
+    font-family: "Noto Kufi Arabic", system-ui, sans-serif;
+    letter-spacing: normal;
+  }
+}
+
+@layer components {
+  .clip-corner {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 16px) 0,
+      100% 16px,
+      100% 100%,
+      16px 100%,
+      0 calc(100% - 16px)
+    );
+  }
+  .clip-corner-sm {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 10px) 0,
+      100% 10px,
+      100% 100%,
+      10px 100%,
+      0 calc(100% - 10px)
+    );
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
