@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle.jsx";
 import LanguageToggle from "./LanguageToggle.jsx";
 import LogoFull from "./LogoFull.jsx";
@@ -9,11 +9,14 @@ import { services } from "../data/services.js";
 
 export default function Navbar() {
   const { t } = useTranslation();
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const menuRef = useRef(null);
+  const controlsRef = useRef(null);
 
   useEffect(() => {
     function handleScroll() {
@@ -32,6 +35,40 @@ export default function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  // Close the mobile menu when tapping outside it (and outside its controls), on Escape, or on route change.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    function handleClickOutside(e) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(e.target) &&
+        controlsRef.current &&
+        !controlsRef.current.contains(e.target)
+      ) {
+        setMenuOpen(false);
+      }
+    }
+
+    function handleKeyDown(e) {
+      if (e.key === "Escape") setMenuOpen(false);
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobileServicesOpen(false);
+  }, [location.pathname]);
 
   const linkColor = scrolled
     ? "text-ink/80 hover:text-ink dark:text-[#9A9FA5] dark:hover:text-white"
@@ -141,30 +178,52 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <button
-          type="button"
-          className={`flex h-10 w-10 items-center justify-center border lg:hidden transition-colors ${
-            scrolled
-              ? "border-line text-ink dark:border-[#2A2D32] dark:text-white"
-              : "border-white/30 text-white"
-          }`}
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle menu"
-        >
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-            {menuOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-          </svg>
-        </button>
+        {/* ─── Mobile controls: language + theme + hamburger, always visible ─── */}
+        <div ref={controlsRef} className="flex items-center gap-2 lg:hidden">
+          <LanguageToggle onDark={!scrolled} />
+          <ThemeToggle onDark={!scrolled} />
+          <button
+            type="button"
+            className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors ${
+              scrolled
+                ? "border-line text-ink dark:border-[#2A2D32] dark:text-white"
+                : "border-white/30 text-white"
+            }`}
+            onClick={() => setMenuOpen((prev) => !prev)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+              {menuOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            </svg>
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-40 bg-black/40 lg:hidden"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            ref={menuRef}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden rounded-b-2xl border-t border-line/60 bg-surface/95 backdrop-blur-xl lg:hidden dark:border-[#2A2D32]/60 dark:bg-[#0D0F12]/95"
+            className="relative z-40 overflow-hidden rounded-b-2xl border-t border-line/60 bg-surface/95 backdrop-blur-xl lg:hidden dark:border-[#2A2D32]/60 dark:bg-[#0D0F12]/95"
           >
             <div className="flex max-h-[75vh] flex-col gap-1 overflow-y-auto px-6 py-6">
               <Link to="/" onClick={() => setMenuOpen(false)} className="py-2 font-display text-sm uppercase tracking-wide text-ink dark:text-[#E8EAED]">
@@ -224,10 +283,6 @@ export default function Navbar() {
                 {t("nav.contact")}
               </Link>
 
-              <div className="flex items-center gap-3 pt-3">
-                <LanguageToggle />
-                <ThemeToggle />
-              </div>
               <Link
                 to="/contact"
                 onClick={() => setMenuOpen(false)}

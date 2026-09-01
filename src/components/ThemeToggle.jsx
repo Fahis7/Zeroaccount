@@ -10,10 +10,10 @@ export default function ThemeToggle({ onDark = false }) {
       type="button"
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className={`relative flex h-9 w-9 items-center justify-center border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 ${
+      className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 ${
         onDark
           ? "border-white/30 text-white hover:border-accent hover:text-accent"
-          : "border-line text-ink hover:border-accent hover:text-accent dark:border-[#2A2D32] dark:text-[#E8EAED]"
+          : "border-line bg-white/80 text-ink backdrop-blur-sm hover:border-accent hover:text-accent dark:border-white/10 dark:bg-[#1A1D22]/80 dark:text-[#E8EAED]"
       }`}
     >
       <AnimatePresence mode="wait" initial={false}>

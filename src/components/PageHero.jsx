@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import ParticleMesh from "./ParticleMesh.jsx";
 import AmbientBackground from "./AmbientBackground.jsx";
 
 const container = {
@@ -18,7 +17,6 @@ export default function PageHero({ lines, crumbs }) {
     <section className="on-dark relative flex min-h-[60vh] items-center overflow-hidden bg-ink pt-32 pb-20 dark:bg-black">
       <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink to-[#0A0F1D] dark:from-black dark:via-black dark:to-[#050608]" />
       <AmbientBackground gridSize={70} />
-      <ParticleMesh />
       <div
         className="pointer-events-none absolute inset-0"
         style={{

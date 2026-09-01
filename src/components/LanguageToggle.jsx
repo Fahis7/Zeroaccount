@@ -13,10 +13,10 @@ export default function LanguageToggle({ onDark = false }) {
       type="button"
       onClick={handleToggle}
       aria-label="Toggle language"
-      className={`border px-3.5 py-1.5 font-display text-xs uppercase tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 ${
+      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border font-display text-xs uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 ${
         onDark
           ? "border-white/30 text-white hover:border-accent hover:text-accent"
-          : "border-line text-ink hover:border-accent hover:text-accent dark:border-[#2A2D32] dark:text-[#E8EAED]"
+          : "border-line bg-white/80 text-ink backdrop-blur-sm hover:border-accent hover:text-accent dark:border-white/10 dark:bg-[#1A1D22]/80 dark:text-[#E8EAED]"
       }`}
     >
       {isArabic ? "EN" : "عربي"}
