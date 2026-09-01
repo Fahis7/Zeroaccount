@@ -2,7 +2,16 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal.jsx";
 
-const companies = ["Meraas", "Almarai", "Emaar", "DP World", "Majid Al Futtaim", "Etisalat"];
+const companies = [
+  "AGLAIIA",
+  "ATELIER",
+  "PADELBEAST",
+  "LAUD",
+  "NATIVE",
+  "CRAVERS",
+  "THE CHARM BAR",
+  "MAZE",
+];
 
 export default function TrustedBy() {
   const { t } = useTranslation();
