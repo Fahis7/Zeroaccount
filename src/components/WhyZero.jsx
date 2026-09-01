@@ -39,7 +39,7 @@ function FloatingShapes() {
             ease: "easeInOut",
             delay: el.delay,
           }}
-          className="absolute border border-teal-400/10 rounded-full"
+          className="absolute border border-accent/10 rounded-full"
           style={{
             width: el.w,
             height: el.h,
@@ -47,7 +47,7 @@ function FloatingShapes() {
             left: el.left,
             right: el.right,
             bottom: el.bottom,
-            background: "radial-gradient(circle, rgba(45,212,191,0.06), transparent 70%)",
+            background: "radial-gradient(circle, rgb(var(--accent-rgb) / 0.06), transparent 70%)",
             willChange: "transform",
           }}
         />
@@ -68,9 +68,9 @@ function ClassyUAESkyline() {
     >
       <defs>
         <linearGradient id="classyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#15BCDF" stopOpacity="0.8" />
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.8" />
           <stop offset="50%" stopColor="#0A8E9F" stopOpacity="1" />
-          <stop offset="100%" stopColor="#15BCDF" stopOpacity="0.8" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0.8" />
         </linearGradient>
       </defs>
 
@@ -196,8 +196,8 @@ export default function WhyZero() {
           className="absolute inset-0"
           style={{
             background: `
-              radial-gradient(ellipse 60% 50% at 20% 80%, rgba(45,212,191,0.08), transparent 60%),
-              radial-gradient(ellipse 50% 40% at 80% 20%, rgba(6,182,212,0.05), transparent 50%)
+              radial-gradient(ellipse 60% 50% at 20% 80%, rgb(var(--accent-rgb) / 0.07), transparent 60%),
+              radial-gradient(ellipse 50% 40% at 80% 20%, rgb(var(--accent-rgb) / 0.04), transparent 50%)
             `,
           }}
         />
@@ -205,10 +205,10 @@ export default function WhyZero() {
           className="absolute inset-0"
           animate={{
             background: [
-              "radial-gradient(ellipse 60% 50% at 20% 80%, rgba(45,212,191,0.10), transparent 60%)",
-              "radial-gradient(ellipse 60% 50% at 80% 20%, rgba(6,182,212,0.10), transparent 60%)",
-              "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(16,185,129,0.06), transparent 60%)",
-              "radial-gradient(ellipse 60% 50% at 20% 80%, rgba(45,212,191,0.10), transparent 60%)",
+              "radial-gradient(ellipse 60% 50% at 20% 80%, rgb(var(--accent-rgb) / 0.08), transparent 60%)",
+              "radial-gradient(ellipse 60% 50% at 80% 20%, rgb(var(--accent-rgb) / 0.08), transparent 60%)",
+              "radial-gradient(ellipse 60% 50% at 50% 50%, rgb(var(--accent-rgb) / 0.05), transparent 60%)",
+              "radial-gradient(ellipse 60% 50% at 20% 80%, rgb(var(--accent-rgb) / 0.08), transparent 60%)",
             ],
           }}
           transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
@@ -237,7 +237,7 @@ export default function WhyZero() {
             style={{
               left: "50%",
               top: "50%",
-              background: "radial-gradient(circle, rgba(45,212,191,0.15), transparent 60%)",
+              background: "radial-gradient(circle, rgb(var(--accent-rgb) / 0.12), transparent 60%)",
               filter: "blur(100px)",
               opacity: 0.5,
               transition: "opacity 0.4s ease",
@@ -292,7 +292,7 @@ export default function WhyZero() {
                   whileHover={{ x: 8, scale: 1.01 }}
                   transition={{ type: "spring", stiffness: 400, damping: 25 }}
                 >
-                  <div className="relative mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-wash text-accent-deep transition-all duration-300 group-hover:bg-accent group-hover:text-white dark:bg-accent/10 dark:text-accent dark:group-hover:bg-accent dark:group-hover:text-white">
+                  <div className="relative mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-wash text-accent-deep transition-all duration-300 group-hover:bg-accent group-hover:text-accent-contrast dark:bg-accent/10 dark:text-accent dark:group-hover:bg-accent dark:group-hover:text-accent-contrast">
                     <svg
                       viewBox="0 0 24 24"
                       width="20"

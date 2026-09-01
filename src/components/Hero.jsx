@@ -42,7 +42,7 @@ function FloatingOrbs() {
     duration: 14 + Math.random() * 20,
     delay: Math.random() * 8,
     opacity: 0.1 + Math.random() * 0.25,
-    color: Math.random() > 0.6 ? "rgba(13,148,136," : "rgba(6,182,212,",
+    color: "rgba(255,255,255,",
   }));
 
   return (
@@ -117,7 +117,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative flex min-h-screen items-center overflow-hidden bg-ink pt-24 dark:bg-black"
+      className="on-dark relative flex min-h-screen items-center overflow-hidden bg-ink pt-24 dark:bg-black"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
@@ -127,9 +127,9 @@ export default function Hero() {
           className="absolute inset-0 transition-opacity duration-1000"
           style={{
             background: `
-              radial-gradient(ellipse 80% 60% at 20% 20%, rgba(13,148,136,0.25), transparent 50%),
-              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(6,182,212,0.15), transparent 50%),
-              radial-gradient(ellipse 50% 40% at 50% 50%, rgba(16,185,129,0.08), transparent 60%)
+              radial-gradient(ellipse 80% 60% at 20% 20%, rgba(255,255,255,0.10), transparent 50%),
+              radial-gradient(ellipse 60% 50% at 80% 80%, rgba(255,255,255,0.07), transparent 50%),
+              radial-gradient(ellipse 50% 40% at 50% 50%, rgba(255,255,255,0.04), transparent 60%)
             `,
           }}
         />
@@ -137,10 +137,10 @@ export default function Hero() {
           className="absolute inset-0"
           animate={{
             background: [
-              "radial-gradient(ellipse 80% 60% at 20% 20%, rgba(13,148,136,0.20), transparent 50%)",
-              "radial-gradient(ellipse 80% 60% at 80% 80%, rgba(6,182,212,0.20), transparent 50%)",
-              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(16,185,129,0.20), transparent 50%)",
-              "radial-gradient(ellipse 80% 60% at 20% 20%, rgba(13,148,136,0.20), transparent 50%)",
+              "radial-gradient(ellipse 80% 60% at 20% 20%, rgba(255,255,255,0.08), transparent 50%)",
+              "radial-gradient(ellipse 80% 60% at 80% 80%, rgba(255,255,255,0.08), transparent 50%)",
+              "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255,255,255,0.08), transparent 50%)",
+              "radial-gradient(ellipse 80% 60% at 20% 20%, rgba(255,255,255,0.08), transparent 50%)",
             ],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
@@ -160,7 +160,7 @@ export default function Hero() {
           style={{
             left: "50%",
             top: "50%",
-            background: "radial-gradient(circle, rgba(13,148,136,0.15), transparent 60%)",
+            background: "radial-gradient(circle, rgba(255,255,255,0.10), transparent 60%)",
             filter: "blur(80px)",
             opacity: isHovering ? 1 : 0.6,
             transition: "opacity 0.6s ease",
@@ -171,7 +171,7 @@ export default function Hero() {
           style={{
             left: "50%",
             top: "50%",
-            background: "radial-gradient(circle, rgba(6,182,212,0.10), transparent 60%)",
+            background: "radial-gradient(circle, rgba(255,255,255,0.08), transparent 60%)",
             filter: "blur(60px)",
             opacity: isHovering ? 0.8 : 0.3,
             transition: "opacity 0.8s ease",
@@ -209,10 +209,10 @@ export default function Hero() {
               transform: `translate(${Math.random() * 20 - 10}px, ${Math.random() * 20 - 10}px)`,
               background:
                 el.shape === "circle"
-                  ? "radial-gradient(circle, rgba(13,148,136,0.12), transparent 70%)"
-                  : "rgba(13,148,136,0.06)",
+                  ? "radial-gradient(circle, rgba(255,255,255,0.10), transparent 70%)"
+                  : "rgba(255,255,255,0.05)",
               boxShadow: el.shape === "circle"
-                ? "0 0 40px rgba(13,148,136,0.05)"
+                ? "0 0 40px rgba(255,255,255,0.05)"
                 : "none",
             }}
           />
@@ -272,7 +272,7 @@ export default function Hero() {
         <motion.div variants={item} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             to="/contact"
-            className="clip-corner bg-accent px-7 py-3.5 font-display text-xs uppercase tracking-wide text-ink shadow-glow transition-transform hover:-translate-y-0.5 hover:bg-accent-deep"
+            className="clip-corner bg-accent px-7 py-3.5 font-display text-xs uppercase tracking-wide text-accent-contrast shadow-glow transition-transform hover:-translate-y-0.5 hover:bg-accent-deep"
           >
             {t("home.hero.cta1")}
           </Link>
