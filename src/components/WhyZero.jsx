@@ -56,7 +56,7 @@ function FloatingShapes() {
   );
 }
 
-// ─── Classy UAE Skyline ─────────────────────────────────────────────
+// ─── Classy UAE Skyline (Dot removed) ──────────────────────────────
 function ClassyUAESkyline() {
   return (
     <svg
@@ -82,7 +82,7 @@ function ClassyUAESkyline() {
         <rect x="242" y="50" width="16" height="170" rx="1" strokeWidth="0.8" />
         <rect x="246" y="70" width="8" height="150" strokeWidth="0.6" />
         <line x1="250" y1="10" x2="250" y2="30" strokeWidth="1.2" strokeLinecap="round" />
-        <circle cx="250" cy="8" r="2" fill="url(#classyGrad)" />
+        {/* Removed the dot at the spire tip */}
         <line x1="235" y1="60" x2="265" y2="60" strokeWidth="0.6" strokeDasharray="3 3" />
         <line x1="235" y1="100" x2="265" y2="100" strokeWidth="0.6" strokeDasharray="3 3" />
         <line x1="235" y1="140" x2="265" y2="140" strokeWidth="0.6" strokeDasharray="3 3" />
@@ -136,7 +136,7 @@ function ClassyUAESkyline() {
         <rect x="480" y="190" width="10" height="30" strokeWidth="0.6" />
       </g>
 
-      {/* Subtle stars */}
+      {/* Subtle stars (left untouched) */}
       <g fill="url(#classyGrad)" opacity="0.4">
         <circle cx="80" cy="30" r="1" />
         <circle cx="350" cy="40" r="1" />
@@ -256,7 +256,7 @@ export default function WhyZero() {
               rotateY: (isMobile || prefersReducedMotion) ? 0 : rotateY,
               perspective: 1200,
             }}
-            // 🎯 Shifted Left: -ml-8 moves it 32px left from center
+            // Shifted left: -ml-8 moves it 32px left from center
             className="relative w-full max-w-4xl aspect-[2/1] flex items-center justify-center -ml-8"
           >
             {/* Pulsing glow behind the skyline */}
