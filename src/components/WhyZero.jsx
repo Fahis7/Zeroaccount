@@ -238,15 +238,15 @@ export default function WhyZero() {
 
       {/* ─── Content ─── */}
       <div className="relative mx-auto max-w-7xl grid grid-cols-1 items-center gap-8 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
-        {/* ─── Left: Shifted Left Classy Skyline ─── */}
-        <ScrollReveal direction="left" className="flex justify-center items-center h-full">
+        {/* ─── Left: Skyline Aligned Left ─── */}
+        <ScrollReveal direction="left" className="flex justify-start items-center h-full">
           <motion.div
             style={{
               rotateX: (isMobile || prefersReducedMotion) ? 0 : rotateX,
               rotateY: (isMobile || prefersReducedMotion) ? 0 : rotateY,
               perspective: 1200,
             }}
-            className="relative w-full max-w-4xl aspect-[2/1] flex items-center justify-center -ml-8"
+            className="relative w-full max-w-4xl aspect-[2/1] flex items-center justify-center"
           >
             {/* Pulsing glow behind the skyline */}
             <motion.div
