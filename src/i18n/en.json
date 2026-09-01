@@ -407,6 +407,9 @@
     "servicesTitle": "Services",
     "companyTitle": "Company",
     "contactTitle": "Get in Touch",
+    "social": {
+      "instagram": "Instagram"
+    },
     "companyLinks": [
       { "label": "About Us", "path": "/about" },
       { "label": "Blog", "path": "/blog" },

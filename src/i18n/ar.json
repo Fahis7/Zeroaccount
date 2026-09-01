@@ -407,6 +407,9 @@
     "servicesTitle": "الخدمات",
     "companyTitle": "الشركة",
     "contactTitle": "تواصل معنا",
+    "social": {
+      "instagram": "انستغرام"
+    },
     "companyLinks": [
       { "label": "من نحن", "path": "/about" },
       { "label": "المدونة", "path": "/blog" },
