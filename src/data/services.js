@@ -5,9 +5,9 @@ export const services = [
     icon: "M4 4h16v16H4V4zm0 5h16M8 4v16",
   },
   {
-    key: "vat",
-    path: "/services/vat-consulting",
-    icon: "M6 18L18 6M7 9a2 2 0 100-4 2 2 0 000 4zm10 10a2 2 0 100-4 2 2 0 000 4z",
+    key: "taxRegistration",
+    path: "/services/tax-registration",
+    icon: "M8 2h8v4H8zM16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2M9 14l2 2 4-4",
   },
   {
     key: "auditing",

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
-export default function ServiceCard({ title, description, icon, path }) {
+export default function ServiceCard({ title, description, icon, path, badge }) {
   const { t } = useTranslation();
   const cardRef = useRef(null);
 
@@ -57,6 +57,13 @@ export default function ServiceCard({ title, description, icon, path }) {
         whileHover={{ height: "100%", top: "0%" }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       />
+
+      {/* ─── Badge tag ─── */}
+      {badge && (
+        <span className="absolute end-4 top-4 z-10 rounded-full border border-accent/30 bg-accent-wash px-2.5 py-1 font-display text-[10px] uppercase tracking-wide text-accent-deep dark:border-accent/20 dark:bg-accent/10 dark:text-accent">
+          {badge}
+        </span>
+      )}
 
       {/* ─── Content (relative, z‑index) ─── */}
       <div className="relative z-10 p-7">

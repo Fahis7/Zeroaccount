@@ -18,7 +18,7 @@ function StackedHeading({ lines, className = "" }) {
   );
 }
 
-export default function ServicePageTemplate({ serviceKey }) {
+export default function ServicePageTemplate({ serviceKey, badge }) {
   const { t } = useTranslation();
   const whatsappLink = useWhatsAppLink();
   const ns = `services.${serviceKey}`;
@@ -41,6 +41,31 @@ export default function ServicePageTemplate({ serviceKey }) {
           { label: breadcrumb },
         ]}
       />
+
+      {badge && (
+        <section className="on-dark relative overflow-hidden bg-ink py-6 dark:bg-black">
+          <div className="relative mx-auto max-w-4xl px-6 lg:px-8">
+            <ScrollReveal>
+              <div className="flex items-center justify-center gap-3 rounded-2xl border border-accent/30 bg-white/5 px-6 py-4 text-center shadow-glow backdrop-blur-sm">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0 text-accent"
+                >
+                  <path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3zM9 12l2 2 4-4" />
+                </svg>
+                <span className="font-display text-sm uppercase tracking-widest text-white">{badge}</span>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
 
       <section className="bg-surface py-24 dark:bg-[#0D0F12]">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">

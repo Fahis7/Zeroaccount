@@ -28,6 +28,11 @@ export default function Services() {
                 description={service.description}
                 icon={services[index % services.length].icon}
                 path={services[index % services.length].path}
+                badge={
+                  services[index % services.length].key === "taxRegistration"
+                    ? t("services.taxRegistration.badgeShort")
+                    : undefined
+                }
               />
             </ScrollReveal>
           ))}
