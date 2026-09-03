@@ -47,12 +47,12 @@ function Condensed({ children, scale = 0.72 }) {
   );
 }
 
-export default function LogoFull({ variant = "auto", className = "", iconClassName = "" }) {
+export default function LogoFull({ variant = "auto", className = "", iconClassName = "", showIcon = true }) {
   const colorClass = variantClasses[variant] ?? variantClasses.auto;
 
   return (
     <span className={`inline-flex items-center gap-2.5 ${colorClass} ${className}`}>
-      <LogoIcon className={iconClassName || "h-[1.3em] w-[1.3em] shrink-0"} />
+      {showIcon && <LogoIcon className={iconClassName || "h-[1.3em] w-[1.3em] shrink-0"} />}
       <span dir="ltr" className="flex flex-col leading-none">
         <span className="flex items-center">
           <Condensed>ZER</Condensed>

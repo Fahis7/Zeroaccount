@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import AmbientBackground from "./AmbientBackground.jsx";
 
 const container = {
@@ -13,6 +14,9 @@ const item = {
 };
 
 export default function PageHero({ lines, crumbs }) {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+
   return (
     <section className="on-dark relative flex min-h-[60vh] items-center overflow-hidden bg-ink pt-32 pb-20 dark:bg-black">
       <div className="absolute inset-0 bg-gradient-to-b from-ink via-ink to-[#0A0F1D] dark:from-black dark:via-black dark:to-[#050608]" />
@@ -30,6 +34,28 @@ export default function PageHero({ lines, crumbs }) {
         animate="show"
         className="relative mx-auto w-full max-w-5xl px-6 lg:px-8"
       >
+        <motion.button
+          type="button"
+          variants={item}
+          onClick={() => navigate(-1)}
+          className="mb-4 flex items-center gap-2 font-display text-xs uppercase tracking-wide text-white/70 transition-colors hover:text-white md:hidden"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="rtl:rotate-180"
+          >
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          {t("common.back")}
+        </motion.button>
+
         {crumbs && crumbs.length > 0 && (
           <motion.nav variants={item} className="mb-8 flex flex-wrap items-center gap-2 text-xs text-white/50">
             {crumbs.map((crumb, index) => (

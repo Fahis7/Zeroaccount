@@ -1,6 +1,9 @@
 {
   "common": {
-    "faqHeading": "Frequently Asked Questions"
+    "faqHeading": "Frequently Asked Questions",
+    "whatsappButton": "Chat on WhatsApp",
+    "callButton": "Call Us",
+    "back": "Back"
   },
   "whatsappMessage": "Hello Zero Accounting,\n\nI visited your website and I'm interested in learning more about your services. Could we schedule a free consultation?\n\nThank you.",
   "nav": {
@@ -13,7 +16,7 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Abu Dhabi & Dubai's Trusted Firm",
+      "eyebrow": "UAE's Trusted Firm",
       "lines": ["PRECISION ACCOUNTING,", "ZERO COMPROMISE"],
       "subtitle": "We bring clarity to your finances with rigorous auditing, seamless VAT compliance, and strategic advisory — so you can focus on building what matters.",
       "cta1": "Book a Consultation",
@@ -390,6 +393,7 @@
       "emailLabel": "Email",
       "locationLabel": "Location",
       "whatsappLabel": "WhatsApp",
+      "instagramLabel": "Instagram",
       "location": "Khalifa Complex B, Mezzanine Floor, Opposite Abu Dhabi Mall, Abu Dhabi, UAE"
     }
   },
