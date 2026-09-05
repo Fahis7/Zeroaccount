@@ -86,7 +86,6 @@ export default function Navbar() {
         <Link to="/" aria-label="Zero Accounting home">
           <LogoFull
             variant={scrolled ? "auto" : "light"}
-            className="text-[26px] transition-colors sm:text-[30px]"
             showIcon={false}
           />
         </Link>

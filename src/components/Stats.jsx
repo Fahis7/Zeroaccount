@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal.jsx";
 import AnimatedCounter from "./AnimatedCounter.jsx";
 
-const targets = [500, 18, 60, 98];
+const targets = [1000, 18, 60, 98];
 const suffixes = ["+", "+", "+", "%"];
 
 export default function Stats() {

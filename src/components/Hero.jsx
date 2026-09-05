@@ -291,7 +291,7 @@ export default function Hero() {
         >
           <div>
             <div className="font-display text-3xl text-white">
-              <AnimatedCounter target={500} suffix="+" />
+              <AnimatedCounter target={1000} suffix="+" />
             </div>
             <div className="mt-1 text-xs uppercase tracking-wide text-white/60">
               {t("home.hero.stat1Label")}

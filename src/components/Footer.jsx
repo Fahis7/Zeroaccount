@@ -33,7 +33,7 @@ export default function Footer() {
             variants={fadeUp}
           >
             <Link to="/" aria-label="Zero Accounting home">
-              <LogoFull variant="auto" className="text-[28px]" />
+              <LogoFull variant="auto" size="lg" showIcon={false} />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-gray-600 dark:text-white/60">
               {t("footer.description")}
