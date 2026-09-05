@@ -56,87 +56,266 @@ function FloatingShapes() {
   );
 }
 
-// ─── Classy UAE Skyline (All dots removed) ──────────────────────────
-function ClassyUAESkyline() {
+// ─── Realistic UAE Skyline ────────────────────────────────────────────
+
+// ─── Realistic UAE Skyline ────────────────────────────────────────────
+function RealisticUAESkyline() {
   return (
     <svg
-      viewBox="0 0 500 250"
+      viewBox="0 0 600 320"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="w-full h-full"
-      preserveAspectRatio="xMidYMid meet"
+      preserveAspectRatio="xMidYMax meet"
     >
       <defs>
-        <linearGradient id="classyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="currentColor" stopOpacity="0.8" />
-          <stop offset="50%" stopColor="#0A8E9F" stopOpacity="1" />
-          <stop offset="100%" stopColor="currentColor" stopOpacity="0.8" />
+        {/* Subtle sky gradient - blends with page */}
+        <linearGradient id="uaeSky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.04" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0.01" />
         </linearGradient>
+        {/* Ground fade */}
+        <linearGradient id="desert" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.06" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0.01" />
+        </linearGradient>
+        {/* Building gradients */}
+        <linearGradient id="bDark" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.85" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0.5" />
+        </linearGradient>
+        <linearGradient id="bMid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0.3" />
+        </linearGradient>
+        <linearGradient id="bFar" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0.15" />
+        </linearGradient>
+        {/* Window glow */}
+        <linearGradient id="wGlow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="rgb(var(--accent-rgb))" stopOpacity="0.6" />
+          <stop offset="100%" stopColor="rgb(var(--accent-rgb))" stopOpacity="0.2" />
+        </linearGradient>
+        {/* Reflection gradient */}
+        <linearGradient id="reflect" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="currentColor" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+        </linearGradient>
+        <filter id="spireGlow">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <filter id="softGlow">
+          <feGaussianBlur stdDeviation="1.5" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
       </defs>
 
-      {/* Ground Line */}
-      <line x1="20" y1="220" x2="480" y2="220" stroke="url(#classyGrad)" strokeWidth="1" strokeDasharray="6 4" strokeLinecap="round" />
+      {/* Sky backdrop */}
+      <rect x="0" y="0" width="600" height="280" fill="url(#uaeSky)" />
 
-      {/* Burj Khalifa */}
-      <g stroke="url(#classyGrad)" fill="none">
-        <rect x="235" y="30" width="30" height="190" rx="2" strokeWidth="1.2" />
-        <rect x="242" y="50" width="16" height="170" rx="1" strokeWidth="0.8" />
-        <rect x="246" y="70" width="8" height="150" strokeWidth="0.6" />
-        <line x1="250" y1="10" x2="250" y2="30" strokeWidth="1.2" strokeLinecap="round" />
-        <line x1="235" y1="60" x2="265" y2="60" strokeWidth="0.6" strokeDasharray="3 3" />
-        <line x1="235" y1="100" x2="265" y2="100" strokeWidth="0.6" strokeDasharray="3 3" />
-        <line x1="235" y1="140" x2="265" y2="140" strokeWidth="0.6" strokeDasharray="3 3" />
-        <line x1="235" y1="180" x2="265" y2="180" strokeWidth="0.6" strokeDasharray="3 3" />
+      {/* Sun/moon disc */}
+      <circle cx="480" cy="60" r="30" fill="currentColor" opacity="0.04" />
+      <circle cx="480" cy="60" r="20" fill="currentColor" opacity="0.03" />
+
+      {/* ═══ FAR BACKGROUND BUILDINGS ═══ */}
+      <rect x="10" y="210" width="14" height="50" rx="1" fill="url(#bFar)" />
+      <rect x="28" y="195" width="10" height="65" rx="1" fill="url(#bFar)" />
+      <rect x="40" y="205" width="12" height="55" rx="1" fill="url(#bFar)" />
+      <rect x="520" y="200" width="12" height="60" rx="1" fill="url(#bFar)" />
+      <rect x="538" y="215" width="16" height="45" rx="1" fill="url(#bFar)" />
+      <rect x="558" y="210" width="10" height="50" rx="1" fill="url(#bFar)" />
+
+      {/* ═══ LEFT CLUSTER ═══ */}
+
+      {/* Mosque with dome and minarets */}
+      <rect x="58" y="200" width="50" height="60" rx="2" fill="url(#bMid)" />
+      {/* Main dome */}
+      <ellipse cx="83" cy="200" rx="20" ry="16" fill="url(#bMid)" />
+      {/* Dome crescent */}
+      <path d="M83 183 L83 178" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+      <path d="M81 178 Q83 175 85 178 Q83 176.5 81 178Z" fill="currentColor" opacity="0.6" />
+      {/* Left minaret */}
+      <rect x="55" y="165" width="6" height="95" rx="1" fill="url(#bDark)" />
+      <ellipse cx="58" cy="165" rx="4" ry="3" fill="url(#bDark)" />
+      <path d="M58 160 L58 157" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+      {/* Right minaret */}
+      <rect x="103" y="170" width="6" height="90" rx="1" fill="url(#bDark)" />
+      <ellipse cx="106" cy="170" rx="4" ry="3" fill="url(#bDark)" />
+      <path d="M106 165 L106 162" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+      {/* Mosque windows - arched */}
+      <path d="M70 225 Q70 220 73 220 Q76 220 76 225 L76 235 L70 235Z" fill="url(#wGlow)" opacity="0.5" />
+      <path d="M80 225 Q80 220 83 220 Q86 220 86 225 L86 235 L80 235Z" fill="url(#wGlow)" opacity="0.6" />
+      <path d="M90 225 Q90 220 93 220 Q96 220 96 225 L96 235 L90 235Z" fill="url(#wGlow)" opacity="0.4" />
+
+      {/* ═══ DUBAI FRAME ═══ */}
+      {/* Outer frame */}
+      <rect x="125" y="115" width="8" height="145" fill="url(#bDark)" />
+      <rect x="170" y="115" width="8" height="145" fill="url(#bDark)" />
+      <rect x="125" y="110" width="53" height="12" rx="1" fill="url(#bDark)" />
+      <rect x="125" y="248" width="53" height="12" rx="1" fill="url(#bDark)" />
+      {/* Inner glass */}
+      <rect x="133" y="122" width="37" height="126" fill="currentColor" opacity="0.03" />
+      {/* Frame windows */}
+      <rect x="128" y="140" width="3" height="4" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="128" y="165" width="3" height="4" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="128" y="190" width="3" height="4" fill="url(#wGlow)" opacity="0.3" />
+      <rect x="128" y="215" width="3" height="4" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="173" y="140" width="3" height="4" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="173" y="165" width="3" height="4" fill="url(#wGlow)" opacity="0.3" />
+      <rect x="173" y="190" width="3" height="4" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="173" y="215" width="3" height="4" fill="url(#wGlow)" opacity="0.4" />
+
+      {/* ═══ MUSEUM OF THE FUTURE (Torus shape) ═══ */}
+      <ellipse cx="210" cy="200" rx="22" ry="32" fill="url(#bMid)" />
+      <ellipse cx="210" cy="200" rx="12" ry="18" fill="currentColor" opacity="0.03" />
+      {/* Arabic calligraphy hint - decorative lines on the torus */}
+      <path d="M192 185 Q195 183 198 185" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      <path d="M192 195 Q195 193 198 195" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      <path d="M192 205 Q195 203 198 205" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      <path d="M192 215 Q195 213 198 215" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      <path d="M222 185 Q225 183 228 185" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      <path d="M222 195 Q225 193 228 195" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      <path d="M222 205 Q225 203 228 205" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      <path d="M222 215 Q225 213 228 215" stroke="currentColor" strokeWidth="0.5" opacity="0.3" fill="none" />
+      {/* Base */}
+      <rect x="195" y="232" width="30" height="28" rx="2" fill="url(#bMid)" />
+
+      {/* ═══ CAYAN TOWER (twisted) ═══ */}
+      <path d="M245 260 L245 130 Q250 125 255 130 L257 260Z" fill="url(#bMid)" />
+      <path d="M247 260 L248 140 Q251 136 254 140 L255 260Z" fill="url(#bDark)" opacity="0.3" />
+      <rect x="248" y="150" width="3" height="3" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="248" y="170" width="3" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="248" y="190" width="3" height="3" fill="url(#wGlow)" opacity="0.3" />
+      <rect x="248" y="210" width="3" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="248" y="230" width="3" height="3" fill="url(#wGlow)" opacity="0.4" />
+
+      {/* ═══ BURJ KHALIFA (centerpiece with stepped tiers) ═══ */}
+      <g filter="url(#spireGlow)">
+        {/* Spire */}
+        <line x1="300" y1="8" x2="300" y2="38" stroke="currentColor" strokeWidth="1.5" opacity="0.8" />
+        <circle cx="300" cy="8" r="3" fill="rgb(var(--accent-rgb))" opacity="0.4" />
+        <circle cx="300" cy="8" r="6" fill="rgb(var(--accent-rgb))" opacity="0.1" />
+        
+        {/* Stepped tiers - the iconic Burj Khalifa shape */}
+        {/* Top narrow tier */}
+        <path d="M296 38 L296 70 L304 70 L304 38 Q300 32 296 38Z" fill="url(#bDark)" />
+        {/* Second tier */}
+        <path d="M293 70 L293 110 L307 110 L307 70Z" fill="url(#bDark)" />
+        {/* Third tier */}
+        <path d="M290 110 L290 155 L310 155 L310 110Z" fill="url(#bDark)" />
+        {/* Fourth tier */}
+        <path d="M286 155 L286 200 L314 200 L314 155Z" fill="url(#bDark)" />
+        {/* Base widest tier */}
+        <path d="M282 200 L282 260 L318 260 L318 200Z" fill="url(#bDark)" />
+
+        {/* Vertical accent lines (setbacks) */}
+        <line x1="300" y1="38" x2="300" y2="260" stroke="currentColor" strokeWidth="0.5" opacity="0.15" />
+        <line x1="293" y1="70" x2="293" y2="260" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
+        <line x1="307" y1="70" x2="307" y2="260" stroke="currentColor" strokeWidth="0.3" opacity="0.1" />
       </g>
 
-      {/* Burj Al Arab */}
-      <g stroke="url(#classyGrad)" fill="none">
-        <path d="M 390 220 L 390 110 Q 420 70 450 110 L 450 220" strokeWidth="1.2" />
-        <path d="M 396 220 L 396 115 Q 420 80 444 115 L 444 220" strokeWidth="0.8" />
-        <ellipse cx="420" cy="100" rx="18" ry="5" strokeWidth="1" />
-        <line x1="402" y1="100" x2="438" y2="100" strokeWidth="0.8" />
-        <line x1="392" y1="150" x2="448" y2="150" strokeWidth="0.6" strokeDasharray="3 3" />
-        <line x1="394" y1="190" x2="446" y2="190" strokeWidth="0.6" strokeDasharray="3 3" />
+      {/* Burj Khalifa windows - golden glow */}
+      {[55, 80, 95, 120, 140, 165, 185, 210, 230, 245].map((y, i) => (
+        <g key={`bk-${i}`}>
+          <rect x={y < 70 ? 297 : y < 110 ? 295 : y < 155 ? 293 : y < 200 ? 289 : 285}
+                y={y} width="2.5" height="3" fill="url(#wGlow)"
+                opacity={[0.5, 0.7, 0.4, 0.6, 0.5, 0.3, 0.6, 0.4, 0.7, 0.5][i]} />
+          <rect x={y < 70 ? 301 : y < 110 ? 303 : y < 155 ? 305 : y < 200 ? 309 : 312}
+                y={y} width="2.5" height="3" fill="url(#wGlow)"
+                opacity={[0.4, 0.6, 0.5, 0.3, 0.7, 0.5, 0.4, 0.6, 0.3, 0.6][i]} />
+        </g>
+      ))}
+
+      {/* ═══ EMIRATES TOWERS (twin towers) ═══ */}
+      {/* Tower 1 - taller */}
+      <path d="M340 260 L340 100 L345 80 L350 100 L350 260Z" fill="url(#bDark)" />
+      <line x1="345" y1="70" x2="345" y2="80" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+      {/* Tower 2 - shorter */}
+      <path d="M356 260 L356 125 L360 110 L364 125 L364 260Z" fill="url(#bDark)" />
+      <line x1="360" y1="102" x2="360" y2="110" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+      {/* Windows */}
+      <rect x="342" y="115" width="2.5" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="346" y="115" width="2.5" height="3" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="342" y="145" width="2.5" height="3" fill="url(#wGlow)" opacity="0.3" />
+      <rect x="346" y="145" width="2.5" height="3" fill="url(#wGlow)" opacity="0.6" />
+      <rect x="342" y="175" width="2.5" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="346" y="175" width="2.5" height="3" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="342" y="205" width="2.5" height="3" fill="url(#wGlow)" opacity="0.6" />
+      <rect x="346" y="205" width="2.5" height="3" fill="url(#wGlow)" opacity="0.3" />
+      <rect x="358" y="140" width="2.5" height="3" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="358" y="170" width="2.5" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="358" y="200" width="2.5" height="3" fill="url(#wGlow)" opacity="0.6" />
+
+      {/* ═══ BURJ AL ARAB (sail shape) ═══ */}
+      <path d="M400 260 L395 260 L390 140 Q390 110 410 95 L410 100 Q400 115 398 140 L400 260Z" fill="url(#bDark)" />
+      <path d="M410 260 L415 260 L418 150 Q418 120 410 100Z" fill="url(#bMid)" />
+      {/* Helipad */}
+      <ellipse cx="405" cy="100" rx="8" ry="3" fill="url(#bDark)" />
+      {/* Interior glow */}
+      <path d="M400 160 Q405 150 410 160 Q405 155 400 160Z" fill="url(#wGlow)" opacity="0.4" />
+      <path d="M398 190 Q405 175 412 190 Q405 180 398 190Z" fill="url(#wGlow)" opacity="0.3" />
+      <path d="M397 220 Q405 205 414 220 Q405 210 397 220Z" fill="url(#wGlow)" opacity="0.35" />
+
+      {/* ═══ RIGHT CLUSTER - More towers ═══ */}
+      <rect x="435" y="150" width="14" height="110" rx="1" fill="url(#bMid)" />
+      <rect x="438" y="160" width="2.5" height="3" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="444" y="160" width="2.5" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="438" y="185" width="2.5" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="444" y="185" width="2.5" height="3" fill="url(#wGlow)" opacity="0.3" />
+      <rect x="438" y="210" width="2.5" height="3" fill="url(#wGlow)" opacity="0.6" />
+      <rect x="444" y="210" width="2.5" height="3" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="438" y="235" width="2.5" height="3" fill="url(#wGlow)" opacity="0.3" />
+      <rect x="444" y="235" width="2.5" height="3" fill="url(#wGlow)" opacity="0.5" />
+
+      <rect x="455" y="170" width="12" height="90" rx="1" fill="url(#bMid)" />
+      <rect x="458" y="180" width="2.5" height="3" fill="url(#wGlow)" opacity="0.5" />
+      <rect x="458" y="205" width="2.5" height="3" fill="url(#wGlow)" opacity="0.4" />
+      <rect x="458" y="230" width="2.5" height="3" fill="url(#wGlow)" opacity="0.6" />
+
+      {/* ═══ PALM TREES ═══ */}
+      {/* Left palm */}
+      <path d="M480 260 L482 210" stroke="currentColor" strokeWidth="2" opacity="0.5" />
+      <path d="M482 210 Q490 195 498 205" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.4" />
+      <path d="M482 210 Q475 192 468 202" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.4" />
+      <path d="M482 210 Q488 190 495 196" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.35" />
+      <path d="M482 210 Q476 190 470 196" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.35" />
+      <path d="M482 210 Q482 192 482 200" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.3" />
+
+      {/* Right palm */}
+      <path d="M510 260 L512 220" stroke="currentColor" strokeWidth="2" opacity="0.45" />
+      <path d="M512 220 Q518 207 524 215" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.35" />
+      <path d="M512 220 Q506 205 500 212" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.35" />
+      <path d="M512 220 Q516 202 522 208" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.3" />
+      <path d="M512 220 Q508 202 502 208" stroke="currentColor" strokeWidth="1.2" fill="none" opacity="0.3" />
+
+      {/* ═══ GROUND LINE & DESERT ═══ */}
+      <rect x="0" y="258" width="600" height="62" fill="url(#desert)" />
+      <line x1="5" y1="260" x2="595" y2="260" stroke="currentColor" strokeWidth="0.6" opacity="0.2" />
+
+      {/* Desert dunes subtle wave */}
+      <path d="M0 265 Q50 258 100 265 Q150 270 200 265 Q250 258 300 265 Q350 270 400 265 Q450 258 500 265 Q550 270 600 265 L600 280 L0 280Z" fill="currentColor" opacity="0.04" />
+
+      {/* ═══ REFLECTIONS ═══ */}
+      <g opacity="0.08" transform="translate(0, 520) scale(1, -1)">
+        {/* Burj Khalifa reflection */}
+        <rect x="290" y="260" width="20" height="40" fill="currentColor" />
+        {/* Frame reflection */}
+        <rect x="130" y="260" width="45" height="25" fill="currentColor" />
+        {/* Emirates Towers reflection */}
+        <rect x="340" y="260" width="25" height="20" fill="currentColor" />
       </g>
 
-      {/* Emirates Towers */}
-      <g stroke="url(#classyGrad)" fill="none">
-        <polygon points="60,220 60,110 80,80 100,110 100,220" strokeWidth="1.2" />
-        <polygon points="68,220 68,115 80,90 92,115 92,220" strokeWidth="0.8" />
-        <line x1="60" y1="140" x2="100" y2="140" strokeWidth="0.6" strokeDasharray="2 2" />
-        <line x1="60" y1="180" x2="100" y2="180" strokeWidth="0.6" strokeDasharray="2 2" />
-        <line x1="76" y1="60" x2="76" y2="80" strokeWidth="0.8" strokeLinecap="round" />
-        <line x1="84" y1="70" x2="84" y2="85" strokeWidth="0.8" strokeLinecap="round" />
-      </g>
-
-      {/* Dubai Frame */}
-      <g stroke="url(#classyGrad)" fill="none">
-        <rect x="140" y="90" width="36" height="130" rx="2" strokeWidth="1.2" />
-        <rect x="148" y="105" width="20" height="100" rx="1" strokeWidth="0.8" />
-        <line x1="140" y1="120" x2="176" y2="120" strokeWidth="0.6" strokeDasharray="2 2" />
-        <line x1="140" y1="160" x2="176" y2="160" strokeWidth="0.6" strokeDasharray="2 2" />
-      </g>
-
-      {/* Modern Buildings */}
-      <g stroke="url(#classyGrad)" fill="none">
-        <rect x="30" y="130" width="14" height="90" strokeWidth="0.8" />
-        <line x1="37" y1="110" x2="37" y2="130" strokeWidth="0.8" strokeLinecap="round" />
-        <rect x="10" y="160" width="10" height="60" strokeWidth="0.8" />
-        <line x1="15" y1="140" x2="15" y2="160" strokeWidth="0.6" strokeLinecap="round" />
-        <rect x="270" y="80" width="18" height="140" strokeWidth="1.2" />
-        <line x1="279" y1="60" x2="279" y2="80" strokeWidth="0.8" strokeLinecap="round" />
-        <line x1="270" y1="110" x2="288" y2="110" strokeWidth="0.6" strokeDasharray="3 3" />
-        <line x1="270" y1="150" x2="288" y2="150" strokeWidth="0.6" strokeDasharray="3 3" />
-        <line x1="270" y1="190" x2="288" y2="190" strokeWidth="0.6" strokeDasharray="3 3" />
-        <rect x="298" y="120" width="14" height="100" strokeWidth="0.8" />
-        <line x1="305" y1="100" x2="305" y2="120" strokeWidth="0.6" strokeLinecap="round" />
-        <rect x="320" y="150" width="12" height="70" strokeWidth="0.8" />
-        <line x1="326" y1="130" x2="326" y2="150" strokeWidth="0.6" strokeLinecap="round" />
-        <rect x="460" y="170" width="12" height="50" strokeWidth="0.8" />
-        <rect x="480" y="190" width="10" height="30" strokeWidth="0.6" />
-      </g>
-
-      {/* ❌ All star/dot circles have been removed */}
+      {/* Subtle stars / birds */}
+      <circle cx="50" cy="40" r="1" fill="currentColor" opacity="0.15" />
+      <circle cx="150" cy="25" r="0.8" fill="currentColor" opacity="0.12" />
+      <circle cx="420" cy="35" r="1" fill="currentColor" opacity="0.1" />
+      <circle cx="550" cy="50" r="0.8" fill="currentColor" opacity="0.13" />
+      {/* Birds */}
+      <path d="M130 55 Q133 52 136 55" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.15" />
+      <path d="M140 50 Q142 48 144 50" stroke="currentColor" strokeWidth="0.5" fill="none" opacity="0.12" />
+      <path d="M440 45 Q443 42 446 45" stroke="currentColor" strokeWidth="0.6" fill="none" opacity="0.13" />
     </svg>
   );
 }
@@ -257,7 +436,7 @@ export default function WhyZero() {
 
             {/* Skyline SVG */}
             <div className="relative z-10 w-full h-full">
-              <ClassyUAESkyline />
+              <RealisticUAESkyline />
             </div>
           </motion.div>
         </ScrollReveal>

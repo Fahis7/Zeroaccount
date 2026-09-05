@@ -2,23 +2,27 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal.jsx";
 
-const companies = [
-  "AGLAIIA",
-  "ATELIER",
-  "PADELBEAST",
-  "LAUD",
-  "NATIVE",
-  "CRAVERS",
-  "THE CHARM BAR",
-  "MAZE",
+const clientLogos = [
+  { name: "AGLAIIA", src: "/logos/aglaiia.jpg", dark: false },
+  { name: "Atelier", src: "/logos/atelier.jpg", dark: true },
+  { name: "Padel Beast", src: "/logos/padelbeast.jpg", dark: true },
+  { name: "LOUD", src: "/logos/loud.png", dark: true },
+  { name: "Native", src: "/logos/native.png", dark: false },
+  { name: "Cravers", src: "/logos/cravers.png", dark: true },
+  { name: "The Charm Bar", src: "/logos/charmbar.jpg", dark: false },
+  { name: "MAZE", src: "/logos/maze.jpg", dark: true },
+  { name: "Aklina", src: "/logos/aklina.png", dark: false },
+  { name: "Al Daya", src: "/logos/aldaya.jpg", dark: false },
+  { name: "Tinker Labs", src: "/logos/tinkerlabs.jpg", dark: false },
+  { name: "YOLO Events", src: "/logos/yolo.jpg", dark: false },
 ];
 
 export default function TrustedBy() {
   const { t } = useTranslation();
   const [isPaused, setIsPaused] = useState(false);
 
-  // Duplicate companies for seamless loop
-  const duplicatedCompanies = [...companies, ...companies];
+  // Duplicate for seamless loop
+  const duplicated = [...clientLogos, ...clientLogos];
 
   return (
     <section className="relative border-y border-gray-200/60 bg-white py-12 dark:border-white/10 dark:bg-[#0D0F12]">
@@ -29,7 +33,7 @@ export default function TrustedBy() {
           </p>
 
           {/* ─── Marquee Container ─── */}
-          <div className="relative mt-6 overflow-hidden">
+          <div className="relative mt-8 overflow-hidden">
             {/* Left fade overlay */}
             <div className="absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent dark:from-[#0D0F12]" />
             
@@ -38,19 +42,28 @@ export default function TrustedBy() {
 
             {/* Marquee track */}
             <div
-              className={`flex w-max gap-8 sm:gap-12 whitespace-nowrap will-change-transform ${
+              className={`flex w-max items-center gap-12 sm:gap-16 whitespace-nowrap will-change-transform ${
                 isPaused ? "animate-marquee-paused" : "animate-marquee"
               }`}
               onMouseEnter={() => setIsPaused(true)}
               onMouseLeave={() => setIsPaused(false)}
             >
-              {duplicatedCompanies.map((name, index) => (
-                <span
+              {duplicated.map((logo, index) => (
+                <div
                   key={index}
-                  className="font-display text-xl uppercase tracking-wide text-ink/25 transition-all duration-300 hover:text-accent hover:scale-110 dark:text-white/20 dark:hover:text-accent"
+                  className={`flex-shrink-0 transition-all duration-300 ${
+                    logo.dark
+                      ? "opacity-60 hover:opacity-100 dark:invert dark:opacity-50 dark:hover:opacity-90"
+                      : "opacity-60 hover:opacity-100 dark:opacity-50 dark:hover:opacity-90"
+                  }`}
                 >
-                  {name}
-                </span>
+                  <img
+                    src={logo.src}
+                    alt={logo.name}
+                    className="h-10 w-auto max-w-[100px] object-contain sm:h-12 sm:max-w-[130px]"
+                    loading="lazy"
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -64,16 +77,15 @@ export default function TrustedBy() {
           100% { transform: translateX(-50%); }
         }
         .animate-marquee {
-          animation: marquee 25s linear infinite;
+          animation: marquee 35s linear infinite;
         }
         .animate-marquee-paused {
-          animation: marquee 25s linear infinite;
+          animation: marquee 35s linear infinite;
           animation-play-state: paused;
         }
-        /* Pause on hover via JS toggles class, but we also want to handle touch devices */
         @media (hover: none) {
           .animate-marquee {
-            animation-duration: 35s; /* slower on touch devices */
+            animation-duration: 45s;
           }
         }
       `}</style>
