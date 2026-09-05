@@ -34,13 +34,13 @@ export default function TrustedBy() {
           {/* ─── Marquee Container ─── */}
           <div className="relative mt-10 overflow-hidden">
             {/* Left fade */}
-            <div className="absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-white to-transparent dark:from-[#0D0F12]" />
+            <div className="absolute inset-y-0 left-0 z-10 w-12 sm:w-28 bg-gradient-to-r from-white to-transparent dark:from-[#0D0F12]" />
             {/* Right fade */}
-            <div className="absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-white to-transparent dark:from-[#0D0F12]" />
+            <div className="absolute inset-y-0 right-0 z-10 w-12 sm:w-28 bg-gradient-to-l from-white to-transparent dark:from-[#0D0F12]" />
 
             {/* Marquee track */}
             <div
-              className={`flex w-max items-center gap-14 sm:gap-20 whitespace-nowrap will-change-transform ${
+              className={`flex w-max items-center gap-6 sm:gap-14 md:gap-20 whitespace-nowrap will-change-transform ${
                 isPaused ? "animate-marquee-paused" : "animate-marquee"
               }`}
               onMouseEnter={() => setIsPaused(true)}
@@ -51,7 +51,7 @@ export default function TrustedBy() {
                   key={index}
                   className="group flex-shrink-0"
                 >
-                  <div className="flex h-14 w-28 items-center justify-center rounded-lg bg-gray-100/80 p-3 transition-all duration-300 group-hover:bg-gray-100 dark:bg-white/5 dark:group-hover:bg-white/10 sm:h-16 sm:w-36 sm:p-4">
+                  <div className="flex h-10 w-20 items-center justify-center rounded-lg bg-gray-100/80 p-2 sm:h-14 sm:w-28 sm:p-3 transition-all duration-300 group-hover:bg-gray-100 dark:bg-white/5 dark:group-hover:bg-white/10 md:h-16 md:w-36 md:p-4">
                     <img
                       src={logo.src}
                       alt={logo.name}

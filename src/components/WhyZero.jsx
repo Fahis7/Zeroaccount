@@ -384,7 +384,7 @@ export default function WhyZero() {
               <img
                 src="/burj.jpg"
                 alt="UAE Skyline"
-                className="w-full max-h-[700px] rounded-2xl object-cover object-top opacity-90 shadow-lg dark:opacity-80"
+                className="w-full max-h-[350px] sm:max-h-[500px] lg:max-h-[700px] rounded-2xl object-cover object-top opacity-90 shadow-lg dark:opacity-80"
                 loading="lazy"
               />
               {/* Subtle gradient overlay to blend with page */}
