@@ -11,6 +11,8 @@ import AuditingAssurance from "./pages/services/AuditingAssurance.jsx";
 import ICVCertification from "./pages/services/ICVCertification.jsx";
 import PayrollServices from "./pages/services/PayrollServices.jsx";
 import BusinessConsultancy from "./pages/services/BusinessConsultancy.jsx";
+import SalaryBenchmarking from "./pages/services/SalaryBenchmarking.jsx";
+import TransferPricing from "./pages/services/TransferPricing.jsx";
 
 export default function App() {
   return (
@@ -25,6 +27,8 @@ export default function App() {
           <Route path="/services/icv-certification" element={<ICVCertification />} />
           <Route path="/services/payroll" element={<PayrollServices />} />
           <Route path="/services/business-consultancy" element={<BusinessConsultancy />} />
+          <Route path="/services/salary-benchmarking" element={<SalaryBenchmarking />} />
+          <Route path="/services/transfer-pricing" element={<TransferPricing />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Route>

@@ -60,6 +60,14 @@
         {
           "title": "Business Consultancy & PRO",
           "description": "From company formation to visa processing, our PRO and consultancy services smooth the path for doing business in the UAE."
+        },
+        {
+          "title": "Salary Benchmarking",
+          "description": "Market-aligned salary benchmarking for connected persons, ensuring your compensation structures comply with UAE transfer pricing regulations."
+        },
+        {
+          "title": "Transfer Pricing",
+          "description": "Expert transfer pricing consultancy — documentation, benchmarking studies, CbCR, and policy reviews to keep your intercompany transactions compliant."
         }
       ]
     },
@@ -761,6 +769,156 @@
       ],
       "faq": [],
       "cta": "Need help with government paperwork? Get in touch today"
+    },
+    "salaryBenchmarking": {
+      "hero": {
+        "lines": [
+          "SALARY",
+          "BENCHMARKING"
+        ],
+        "breadcrumb": "Salary Benchmarking"
+      },
+      "intro": {
+        "heading": [
+          "CONNECTED PERSONS",
+          "SALARY BENCHMARKING"
+        ],
+        "paragraphs": [
+          "In the UAE, transfer pricing regulations require businesses to ensure that salaries paid to connected persons align with market standards. Connected persons include shareholders, directors, or related employees who have direct or indirect control over the company's financial and operational decisions.",
+          "Since these salaries are considered related-party transactions, tax authorities closely scrutinize them to ensure they reflect an arm's length value — meaning they should be comparable to what an independent third party would receive for a similar role in a similar industry.",
+          "At Zero Accounting, our salary benchmarking study helps businesses determine whether their compensation structures comply with UAE transfer pricing rules, minimizing tax risks and potential disputes with regulatory authorities. By using a benchmarking approach, we help companies justify the salaries paid to connected persons with solid market data, ensuring fairness, transparency, and full compliance."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": [
+            "WHY SALARY",
+            "BENCHMARKING MATTERS"
+          ],
+          "columns": 3,
+          "items": [
+            {
+              "title": "Regulatory Compliance",
+              "description": "Ensure salaries to connected persons meet UAE transfer pricing regulations and arm's length standards."
+            },
+            {
+              "title": "Risk Mitigation",
+              "description": "Minimize exposure to tax penalties and disputes with the Federal Tax Authority."
+            },
+            {
+              "title": "Market-Driven Data",
+              "description": "Justify compensation with reliable, industry-specific market benchmarks and salary surveys."
+            },
+            {
+              "title": "Transparency & Fairness",
+              "description": "Demonstrate that related-party compensation is fair and independently supportable."
+            },
+            {
+              "title": "Audit Readiness",
+              "description": "Maintain robust documentation that withstands scrutiny from tax authorities."
+            },
+            {
+              "title": "Strategic Planning",
+              "description": "Align compensation structures with your broader tax and business strategy."
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Who qualifies as a connected person under UAE tax law?",
+          "answer": "Connected persons include shareholders, directors, officers, or related employees who have direct or indirect control or influence over the company's financial and operational decisions."
+        },
+        {
+          "question": "Why do salaries to connected persons need benchmarking?",
+          "answer": "These salaries are considered related-party transactions. UAE transfer pricing rules require them to reflect arm's length value — comparable to what an independent party would receive for a similar role."
+        },
+        {
+          "question": "How is the benchmarking study conducted?",
+          "answer": "We analyze comparable market data, industry salary surveys, and role-specific compensation benchmarks to determine whether your connected persons' salaries align with market standards."
+        },
+        {
+          "question": "How often should salary benchmarking be updated?",
+          "answer": "We recommend annual reviews to ensure ongoing compliance as market conditions and regulations evolve."
+        }
+      ],
+      "cta": "Need a salary benchmarking study for connected persons? Get in touch today"
+    },
+    "transferPricing": {
+      "hero": {
+        "lines": [
+          "TRANSFER",
+          "PRICING"
+        ],
+        "breadcrumb": "Transfer Pricing"
+      },
+      "intro": {
+        "heading": [
+          "TRANSFER PRICING",
+          "CONSULTANCY"
+        ],
+        "paragraphs": [
+          "Zero Accounting is a leading provider of transfer pricing consultancy services in the UAE, offering comprehensive solutions designed to ensure compliance with local and international tax regulations. Our team of skilled transfer pricing specialists provides expert guidance in optimizing intercompany transactions, preparing necessary documentation, and conducting benchmarking studies.",
+          "With a deep understanding of the UAE's evolving transfer pricing framework and global standards, we assist businesses in aligning their pricing strategies with the arm's length principle. We offer tailored solutions for transfer pricing documentation, Country-by-Country Reporting (CbCR), transfer pricing audits, and policy reviews to mitigate tax risks and avoid penalties.",
+          "At Zero Accounting, we prioritize strategic tax planning, ensuring that your business is fully compliant while optimizing its tax position. Our commitment to excellence empowers businesses to navigate the complexities of transfer pricing with confidence, driving long-term financial success and growth."
+        ]
+      },
+      "sections": [
+        {
+          "type": "grid",
+          "heading": [
+            "OUR TRANSFER",
+            "PRICING SERVICES"
+          ],
+          "columns": 3,
+          "items": [
+            {
+              "title": "TP Documentation",
+              "description": "Comprehensive transfer pricing documentation including Local File, Master File, and supporting analyses."
+            },
+            {
+              "title": "Benchmarking Studies",
+              "description": "Detailed comparability analyses to validate that intercompany transactions meet arm's length standards."
+            },
+            {
+              "title": "Country-by-Country Reporting",
+              "description": "Preparation and filing of CbCR to meet international reporting obligations."
+            },
+            {
+              "title": "Policy Design & Review",
+              "description": "Develop and review transfer pricing policies aligned with your business model and regulatory requirements."
+            },
+            {
+              "title": "Audit & Dispute Support",
+              "description": "Expert representation and support during transfer pricing audits and regulatory inquiries."
+            },
+            {
+              "title": "Intercompany Optimization",
+              "description": "Strategic structuring of intercompany transactions to optimize tax efficiency while maintaining compliance."
+            }
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "What is transfer pricing?",
+          "answer": "Transfer pricing refers to the rules governing the pricing of transactions between related parties (e.g., subsidiaries of the same parent company). These prices must reflect arm's length value — what unrelated parties would agree to."
+        },
+        {
+          "question": "Does the UAE have transfer pricing regulations?",
+          "answer": "Yes, the UAE Corporate Tax law includes transfer pricing provisions requiring businesses to comply with the arm's length principle and maintain proper documentation."
+        },
+        {
+          "question": "Who needs transfer pricing documentation?",
+          "answer": "Any business with related-party transactions above certain thresholds, including intercompany sales, services, loans, and management fees, should maintain transfer pricing documentation."
+        },
+        {
+          "question": "What are the penalties for non-compliance?",
+          "answer": "Non-compliance with UAE transfer pricing rules can result in significant penalties, adjustments to taxable income, and increased scrutiny from the Federal Tax Authority."
+        }
+      ],
+      "cta": "Need expert transfer pricing consultancy? Get in touch today"
     }
   },
   "contact": {

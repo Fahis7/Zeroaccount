@@ -20,7 +20,7 @@ export default function Services() {
           <p className="mt-4 text-muted dark:text-[#9A9FA5]">{t("home.services.subtitle")}</p>
         </ScrollReveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {items.map((service, index) => (
             <ScrollReveal key={service.title} delay={index * 0.08}>
               <ServiceCard
