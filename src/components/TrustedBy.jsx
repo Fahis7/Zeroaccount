@@ -53,8 +53,8 @@ export default function TrustedBy() {
                   key={index}
                   className={`flex-shrink-0 transition-all duration-300 ${
                     logo.dark
-                      ? "opacity-60 hover:opacity-100 dark:invert dark:opacity-50 dark:hover:opacity-90"
-                      : "opacity-60 hover:opacity-100 dark:opacity-50 dark:hover:opacity-90"
+                      ? "opacity-80 hover:opacity-100 dark:invert dark:opacity-70 dark:hover:opacity-100"
+                      : "opacity-80 hover:opacity-100 dark:opacity-70 dark:hover:opacity-100"
                   }`}
                 >
                   <img
