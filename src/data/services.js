@@ -25,6 +25,11 @@ export const services = [
     icon: "M12 8a4 4 0 100-8 4 4 0 000 8zM4 15a4 4 0 108 0 4 4 0 00-8 0zm8 5a4 4 0 108 0 4 4 0 00-8 0z",
   },
   {
+    key: "consultancy",
+    path: "/services/business-consultancy",
+    icon: "M4 8h16v11H4V8zm4 0V5a2 2 0 012-2h4a2 2 0 012 2v3M4 13h16",
+  },
+  {
     key: "salaryBenchmarking",
     path: "/services/salary-benchmarking",
     icon: "M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2m14-4a4 4 0 100-8 4 4 0 000 8zm6 8v-2a4 4 0 00-3-3.87",
@@ -33,10 +38,5 @@ export const services = [
     key: "transferPricing",
     path: "/services/transfer-pricing",
     icon: "M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6",
-  },
-  {
-    key: "consultancy",
-    path: "/services/business-consultancy",
-    icon: "M4 8h16v11H4V8zm4 0V5a2 2 0 012-2h4a2 2 0 012 2v3M4 13h16",
   },
 ];

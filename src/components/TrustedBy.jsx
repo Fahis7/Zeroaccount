@@ -3,29 +3,28 @@ import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal.jsx";
 
 const clientLogos = [
-  { name: "AGLAIIA", src: "/logos/aglaiia.jpg", dark: false },
-  { name: "Atelier", src: "/logos/atelier.jpg", dark: true },
-  { name: "Padel Beast", src: "/logos/padelbeast.jpg", dark: true },
-  { name: "LOUD", src: "/logos/loud.png", dark: true },
-  { name: "Native", src: "/logos/native.png", dark: false },
-  { name: "Cravers", src: "/logos/cravers.png", dark: true },
-  { name: "The Charm Bar", src: "/logos/charmbar.jpg", dark: false },
-  { name: "MAZE", src: "/logos/maze.jpg", dark: true },
-  { name: "Aklina", src: "/logos/aklina.png", dark: false },
-  { name: "Al Daya", src: "/logos/aldaya.jpg", dark: false },
-  { name: "Tinker Labs", src: "/logos/tinkerlabs.jpg", dark: false },
-  { name: "YOLO Events", src: "/logos/yolo.jpg", dark: false },
+  { name: "AGLAIIA", src: "/logos/aglaiia.jpg" },
+  { name: "Atelier", src: "/logos/atelier.jpg" },
+  { name: "Padel Beast", src: "/logos/padelbeast.jpg" },
+  { name: "LOUD", src: "/logos/loud.png" },
+  { name: "Native", src: "/logos/native.png" },
+  { name: "Cravers", src: "/logos/cravers.png" },
+  { name: "The Charm Bar", src: "/logos/charmbar.jpg" },
+  { name: "MAZE", src: "/logos/maze.jpg" },
+  { name: "Aklina", src: "/logos/aklina.png" },
+  { name: "Al Daya", src: "/logos/aldaya.jpg" },
+  { name: "Tinker Labs", src: "/logos/tinkerlabs.jpg" },
+  { name: "YOLO Events", src: "/logos/yolo.jpg" },
 ];
 
 export default function TrustedBy() {
   const { t } = useTranslation();
   const [isPaused, setIsPaused] = useState(false);
 
-  // Duplicate for seamless loop
   const duplicated = [...clientLogos, ...clientLogos];
 
   return (
-    <section className="relative border-y border-gray-200/60 bg-white py-12 dark:border-white/10 dark:bg-[#0D0F12]">
+    <section className="relative border-y border-gray-200/60 bg-white py-14 dark:border-white/10 dark:bg-[#0D0F12]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal>
           <p className="text-center font-display text-xs uppercase tracking-widest text-muted dark:text-[#9A9FA5]">
@@ -33,16 +32,15 @@ export default function TrustedBy() {
           </p>
 
           {/* ─── Marquee Container ─── */}
-          <div className="relative mt-8 overflow-hidden">
-            {/* Left fade overlay */}
-            <div className="absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-white to-transparent dark:from-[#0D0F12]" />
-            
-            {/* Right fade overlay */}
-            <div className="absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-white to-transparent dark:from-[#0D0F12]" />
+          <div className="relative mt-10 overflow-hidden">
+            {/* Left fade */}
+            <div className="absolute inset-y-0 left-0 z-10 w-28 bg-gradient-to-r from-white to-transparent dark:from-[#0D0F12]" />
+            {/* Right fade */}
+            <div className="absolute inset-y-0 right-0 z-10 w-28 bg-gradient-to-l from-white to-transparent dark:from-[#0D0F12]" />
 
             {/* Marquee track */}
             <div
-              className={`flex w-max items-center gap-12 sm:gap-16 whitespace-nowrap will-change-transform ${
+              className={`flex w-max items-center gap-14 sm:gap-20 whitespace-nowrap will-change-transform ${
                 isPaused ? "animate-marquee-paused" : "animate-marquee"
               }`}
               onMouseEnter={() => setIsPaused(true)}
@@ -51,18 +49,16 @@ export default function TrustedBy() {
               {duplicated.map((logo, index) => (
                 <div
                   key={index}
-                  className={`flex-shrink-0 transition-all duration-300 ${
-                    logo.dark
-                      ? "opacity-80 hover:opacity-100 dark:invert dark:opacity-70 dark:hover:opacity-100"
-                      : "opacity-80 hover:opacity-100 dark:opacity-70 dark:hover:opacity-100"
-                  }`}
+                  className="group flex-shrink-0"
                 >
-                  <img
-                    src={logo.src}
-                    alt={logo.name}
-                    className="h-10 w-auto max-w-[100px] object-contain sm:h-12 sm:max-w-[130px]"
-                    loading="lazy"
-                  />
+                  <div className="flex h-14 w-28 items-center justify-center rounded-lg bg-gray-100/80 p-3 transition-all duration-300 group-hover:bg-gray-100 dark:bg-white/5 dark:group-hover:bg-white/10 sm:h-16 sm:w-36 sm:p-4">
+                    <img
+                      src={logo.src}
+                      alt={logo.name}
+                      className="h-full w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 dark:brightness-0 dark:invert dark:opacity-50 dark:group-hover:opacity-90"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               ))}
             </div>

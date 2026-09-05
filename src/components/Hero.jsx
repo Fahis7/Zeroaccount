@@ -245,7 +245,7 @@ export default function Hero() {
         {/* ─── Eyebrow ── */}
         <motion.span
           variants={item}
-          className="inline-block border border-white/15 bg-white/5 px-4 py-1.5 font-display text-xs uppercase tracking-wide text-accent"
+          className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.15em] text-accent shadow-[0_0_20px_rgba(255,255,255,0.08)] backdrop-blur-sm overflow-hidden relative shimmer-badge"
         >
           {t("home.hero.eyebrow")}
         </motion.span>

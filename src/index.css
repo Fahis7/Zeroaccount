@@ -2,6 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Shimmer sweep animation for eyebrow badge */
+.shimmer-badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer-sweep 3s infinite 0.2s;
+}
+
+@keyframes shimmer-sweep {
+  0% { left: -100%; }
+  40% { left: 120%; }
+  100% { left: 120%; }
+}
+
+/* Pulse beat animation for eyebrow badge */
+.shimmer-badge {
+  animation: pulse-beat 2s infinite ease-in-out;
+}
+
+@keyframes pulse-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
 @layer base {
   :root {
     --accent-rgb: 26 28 30; /* #1A1C1E — near-black accent, light mode */

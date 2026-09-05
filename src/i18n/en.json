@@ -16,7 +16,7 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "UAE Trusted Accounting Firm & FTA Approved Tax Agency",
+      "eyebrow": "FTA APPROVED TAX AGENCY · TRUSTED ACCOUNTING FIRM · UAE",
       "lines": [
         "PRECISION ACCOUNTING,",
         "ZERO COMPROMISE"
@@ -26,7 +26,11 @@
       "cta2": "Explore Services",
       "stat1Label": "Happy Clients",
       "stat2Label": "Years Experience",
-      "stat3Label": "Client Retention"
+      "stat3Label": "Client Retention",
+      "heading": [
+        "WE BRING IT DOWN TO ZERO,",
+        "SO YOU CAN REACH THE TOP"
+      ]
     },
     "trusted": {
       "label": "Trusted by"
