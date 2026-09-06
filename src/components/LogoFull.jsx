@@ -12,7 +12,7 @@ export default function LogoFull({ variant = "auto", className = "", iconClassNa
   // Precise viewBox: x 345→725, y 355→725 (tight around all paths)
   const vb = "345 355 380 370";
 
-  const sizeClass = size === "lg" ? "h-14" : "h-9 sm:h-10";
+  const sizeClass = size === "lg" ? "h-14" : "h-10 sm:h-12";
 
   return (
     <span className={`inline-flex items-center gap-2 ${colorClass} ${className}`}>
