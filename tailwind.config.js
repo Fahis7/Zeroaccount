@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         ink: { DEFAULT: "#1A1C1E", soft: "#2A2D32" },
-        surface: { DEFAULT: "#F2F1F0", raised: "#FFFFFF" },
+        surface: { DEFAULT: "#FFFFFF", raised: "#FFFFFF" },
         accent: {
           DEFAULT: "rgb(var(--accent-rgb) / <alpha-value>)",
           deep: "rgb(var(--accent-deep-rgb) / <alpha-value>)",
