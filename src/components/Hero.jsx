@@ -36,7 +36,8 @@ const floatShape = {
 
 // ─── Floating Orbs (No lines) ──────────────────────────────────────
 function FloatingOrbs() {
-  const orbs = Array.from({ length: 30 }, (_, i) => ({
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  const orbs = Array.from({ length: isMobile ? 8 : 30 }, (_, i) => ({
     id: i,
     size: 3 + Math.random() * 18,
     x: Math.random() * 100,

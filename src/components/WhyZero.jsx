@@ -13,6 +13,8 @@ const icons = [
 
 // ─── Floating background shapes ──────────────────────────────────────
 function FloatingShapes() {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+  if (isMobile) return null;
   const shapes = [
     { w: 50, h: 50, top: "5%", left: "3%", delay: 0 },
     { w: 30, h: 30, top: "20%", right: "8%", delay: 1.2 },
