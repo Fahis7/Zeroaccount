@@ -197,7 +197,7 @@ export default function Footer() {
                 >
                   <path d="M12 21s-7-6.1-7-11a7 7 0 0114 0c0 4.9-7 11-7 11z M12 13a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
                 </svg>
-                <span>{t("contact.info.location")}</span>
+                <a href="https://maps.google.com/?q=Khalifa+Complex+B+Mezzanine+Floor+Abu+Dhabi+UAE" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">{t("contact.info.location")}</a>
               </li>
               <li className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-white/60">
                 <svg
