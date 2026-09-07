@@ -86,6 +86,7 @@ export default function Hero() {
   const { t } = useTranslation();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const isMobileDevice = typeof window !== "undefined" && ("ontouchstart" in window || window.innerWidth < 768);
 
   // ── Mouse tracking ──
   const mouseX = useMotionValue(0);
@@ -136,7 +137,7 @@ export default function Hero() {
             `,
           }}
         />
-        <motion.div
+        {!isMobileDevice && <motion.div
           className="absolute inset-0"
           animate={{
             background: [
@@ -147,14 +148,14 @@ export default function Hero() {
             ],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        />
+        />}
       </div>
 
       {/* ─── Floating Orbs (No connecting lines) ─────────────── */}
       <FloatingOrbs />
 
-      {/* ─── Mouse‑Following Glow ───────────────────────────── */}
-      <motion.div
+      {/* ─── Mouse‑Following Glow (desktop only) ──────────── */}
+      {!isMobileDevice && <motion.div
         className="pointer-events-none absolute inset-0"
         style={{ x: glowX, y: glowY }}
       >
@@ -180,10 +181,10 @@ export default function Hero() {
             transition: "opacity 0.8s ease",
           }}
         />
-      </motion.div>
+      </motion.div>}
 
-      {/* ─── Floating Shapes ────────────────────────────────── */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      {/* ─── Floating Shapes (desktop only) ──────────────── */}
+      {!isMobileDevice && <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {[
           { w: 40, h: 40, top: "12%", left: "8%", delay: 0, shape: "circle" },
           { w: 24, h: 24, top: "18%", right: "12%", delay: 1.2, shape: "diamond" },
@@ -220,7 +221,7 @@ export default function Hero() {
             }}
           />
         ))}
-      </div>
+      </div>}
 
       {/* ─── Subtle Grid Overlay ───────────────────────────── */}
       <div
