@@ -55,7 +55,7 @@ export default function TrustedBy() {
                     <img
                       src={logo.src}
                       alt={logo.name}
-                      className="h-full w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 dark:brightness-0 dark:invert dark:opacity-50 dark:group-hover:opacity-90"
+                      className="h-full w-full object-contain grayscale opacity-70 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100 dark:invert dark:opacity-70 dark:group-hover:opacity-100"
                       loading="lazy"
                     />
                   </div>
