@@ -39,18 +39,30 @@ export default function Footer() {
               {t("footer.description")}
             </p>
             <div className="mt-6 flex gap-3">
-              {["linkedin", "twitter", "facebook"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 text-gray-400 transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent dark:border-white/10 dark:text-white/40 dark:hover:border-accent/50 dark:hover:bg-accent/10 dark:hover:text-accent"
-                >
-                  <span className="sr-only">{social}</span>
-                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22 4.2C21.1 4.7 20.2 5 19.3 5.2C20.2 4.6 20.9 3.8 21.2 2.8C20.3 3.3 19.3 3.7 18.3 3.9C17.4 3 16.1 2.5 14.8 2.5C12.1 2.5 9.9 4.7 9.9 7.4C9.9 7.9 10 8.3 10.1 8.7C6.9 8.5 3.9 6.5 1.9 3.6C1.4 4.5 1.1 5.5 1.1 6.6C1.1 8.6 2.1 10.4 3.6 11.5C2.8 11.5 2.1 11.3 1.5 10.9C1.5 12.5 2.7 13.9 4.3 14.3C3.9 14.4 3.4 14.5 2.9 14.5C2.5 14.5 2.2 14.4 1.9 14.3C2.5 15.8 4 16.9 5.8 17C4.6 18 3.1 18.6 1.5 18.6C1 18.6 0.5 18.5 0 18.4C1.9 19.5 4.1 20.1 6.4 20.1C14.8 20.1 19.5 13.2 19.5 7.2C19.5 7 19.5 6.8 19.5 6.6C20.4 5.9 21.2 5.1 22 4.2Z" />
-                  </svg>
-                </a>
-              ))}
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/zero-accounting-4742bb326/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 text-gray-400 transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent dark:border-white/10 dark:text-white/40 dark:hover:border-accent/50 dark:hover:bg-accent/10 dark:hover:text-accent"
+              >
+                <span className="sr-only">LinkedIn</span>
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </a>
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/zeroaccounting"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 text-gray-400 transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 hover:text-accent dark:border-white/10 dark:text-white/40 dark:hover:border-accent/50 dark:hover:bg-accent/10 dark:hover:text-accent"
+              >
+                <span className="sr-only">Facebook</span>
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
               <a
                 href="https://www.instagram.com/zero_accounting?utm_source=qr&igsi=czhucHdzaXdjMXRz"
                 target="_blank"
