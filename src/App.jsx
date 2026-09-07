@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
+import SmoothScroll from "./components/SmoothScroll.jsx";
 import MainLayout from "./layouts/MainLayout.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
@@ -17,22 +18,24 @@ import TransferPricing from "./pages/services/TransferPricing.jsx";
 export default function App() {
   return (
     <ThemeProvider>
-      <Routes>
-        <Route element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services/accounting" element={<AccountingBookkeeping />} />
-          <Route path="/services/tax-registration" element={<TaxRegistration />} />
-          <Route path="/services/auditing" element={<AuditingAssurance />} />
-          <Route path="/services/icv-certification" element={<ICVCertification />} />
-          <Route path="/services/payroll" element={<PayrollServices />} />
-          <Route path="/services/business-consultancy" element={<BusinessConsultancy />} />
-          <Route path="/services/salary-benchmarking" element={<SalaryBenchmarking />} />
-          <Route path="/services/transfer-pricing" element={<TransferPricing />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
-      </Routes>
+      <SmoothScroll>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services/accounting" element={<AccountingBookkeeping />} />
+            <Route path="/services/tax-registration" element={<TaxRegistration />} />
+            <Route path="/services/auditing" element={<AuditingAssurance />} />
+            <Route path="/services/icv-certification" element={<ICVCertification />} />
+            <Route path="/services/payroll" element={<PayrollServices />} />
+            <Route path="/services/business-consultancy" element={<BusinessConsultancy />} />
+            <Route path="/services/salary-benchmarking" element={<SalaryBenchmarking />} />
+            <Route path="/services/transfer-pricing" element={<TransferPricing />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </SmoothScroll>
     </ThemeProvider>
   );
 }

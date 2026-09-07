@@ -1,0 +1,169 @@
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+/* ── SVG path groups from the official logo ── */
+const logoPaths = {
+  Z: <path transform="matrix(1,0,0,-1,355.7339,614.97549)" d="M0 0 27.537 205.563H.631V226.045H56.334V208.308L29.008 2.956H56.755V-17.527H0Z"/>,
+  E: <path transform="matrix(1,0,0,-1,430.1374,388.93)" d="M0 0H48.136V-19.638H26.065V-107.127H43.512V-123.597H26.065V-224.356H48.347V-243.573H0Z"/>,
+  R: <path transform="matrix(1,0,0,-1,530.3951,415.53663)" d="M0 0C0 4.435-2.102 6.757-6.306 6.757H-11.982V-102.904H-6.096C-2.102-102.904 0-100.159 0-94.879ZM24.594-216.966H-.21L-4.204-120.219H-5.465-11.982V-216.966H-36.785V26.607H-6.727C14.084 26.607 24.594 19.427 24.594 .634V-94.457C24.594-102.904 22.281-109.238 17.447-113.673Z"/>,
+  bracketOpen: <path transform="matrix(1,0,0,-1,574.2889,390.61933)" d="M0 0C0 10.136 2.522 17.738 7.777 22.806 13.033 28.085 22.912 30.619 37.416 30.619V12.247C29.428 12.247 25.435 9.291 25.435 3.168V-243.783C25.435-249.485 29.428-252.441 37.416-252.441V-270.812C7.357-270.812 0-259.621 0-240.405Z"/>,
+  O: <path transform="matrix(1,0,0,-1,656.4656,412.36854)" d="M0 0C0 4.011-1.892 6.123-5.886 6.123-9.88 6.123-11.771 4.011-11.771 0V-196.694C-11.771-200.707-9.88-202.819-5.886-202.819-1.892-202.819 0-200.707 0-196.694ZM-36.996-2.956C-36.996 15.837-26.275 25.972-5.886 25.972 14.504 25.972 25.014 15.626 25.014-4.646V-192.049C25.014-212.532 14.714-222.879-5.886-222.879-26.696-222.879-36.996-212.532-36.996-192.049Z"/>,
+  bracketClose: <path transform="matrix(1,0,0,-1,686.85,643.0608)" d="M0 0C7.988 0 11.982 2.956 11.982 8.869V255.82C11.982 260.888 9.459 264.689 0 264.689L.21 283.061C30.269 283.061 37.416 272.08 37.416 252.441V12.247C37.416-7.18 30.269-18.371 .21-18.371Z"/>,
+};
+
+/* ACCOUNTING letter paths */
+const accountingPaths = [
+  <path key="A" transform="matrix(1,0,0,-1,421.0076,714.3318)" d="M0 0-2.753 6.37-5.452 0ZM.864-2.105H-6.37L-7.773-5.452H-10.581L-4.049 9.069H-1.404L5.182-5.452H2.321Z"/>,
+  <path key="C1" transform="matrix(1,0,0,-1,447.2317,720)" d="M0 0C-1.484 0-2.807.324-3.995.972-5.182 1.619-6.127 2.497-6.802 3.617-7.45 4.764-7.773 6.046-7.773 7.45-7.773 8.88-7.436 10.162-6.748 11.282-6.073 12.429-5.155 13.334-3.995 13.981-2.807 14.629-1.484 14.953 0 14.953 1.188 14.953 2.267 14.737 3.239 14.305 4.211 13.901 5.034 13.307 5.722 12.524L3.995 10.85C2.942 11.998 1.646 12.578.108 12.578-.864 12.578-1.754 12.362-2.537 11.93-3.333 11.498-3.968 10.878-4.427 10.095-4.858 9.339-5.074 8.448-5.074 7.45-5.074 6.478-4.858 5.587-4.427 4.804-3.968 4.049-3.333 3.455-2.537 3.023-1.754 2.591-.864 2.375.108 2.375 1.646 2.375 2.942 2.942 3.995 4.103L5.722 2.429C5.034 1.633 4.211 1.026 3.239.594 2.267.202 1.188 0 0 0"/>,
+  <path key="C2" transform="matrix(1,0,0,-1,474.7811,720)" d="M0 0C-1.485 0-2.807.324-3.995.972-5.182 1.619-6.127 2.497-6.802 3.617-7.45 4.764-7.773 6.046-7.773 7.45-7.773 8.88-7.436 10.162-6.748 11.282-6.073 12.429-5.155 13.334-3.995 13.981-2.807 14.629-1.485 14.953 0 14.953 1.188 14.953 2.267 14.737 3.239 14.305 4.211 13.901 5.034 13.307 5.722 12.524L3.995 10.85C2.942 11.998 1.646 12.578.108 12.578-.864 12.578-1.754 12.362-2.537 11.93-3.333 11.498-3.968 10.878-4.427 10.095-4.858 9.339-5.074 8.448-5.074 7.45-5.074 6.478-4.858 5.587-4.427 4.804-3.968 4.049-3.333 3.455-2.537 3.023-1.754 2.591-.864 2.375.108 2.375 1.646 2.375 2.942 2.942 3.995 4.103L5.722 2.429C5.034 1.633 4.211 1.026 3.239.594 2.267.202 1.188 0 0 0"/>,
+  <path key="O2" transform="matrix(1,0,0,-1,502.3846,717.62478)" d="M0 0C.972 0 1.835.216 2.591.648 3.374 1.08 3.995 1.687 4.427 2.483 4.858 3.266 5.074 4.13 5.074 5.074 5.074 6.046 4.858 6.923 4.427 7.72 3.995 8.502 3.374 9.123 2.591 9.555 1.835 9.987.972 10.203 0 10.203-.972 10.203-1.862 9.987-2.645 9.555-3.401 9.123-4.022 8.502-4.481 7.72-4.912 6.923-5.128 6.046-5.128 5.074-5.128 4.13-4.912 3.266-4.481 2.483-4.022 1.687-3.401 1.08-2.645.648-1.862.216-.972 0 0 0M0-2.375C-1.485-2.375-2.807-2.051-3.995-1.404-5.182-.756-6.127.121-6.802 1.242-7.49 2.389-7.827 3.671-7.827 5.074-7.827 6.505-7.49 7.787-6.802 8.907-6.127 10.054-5.182 10.958-3.995 11.606-2.807 12.254-1.485 12.578 0 12.578 1.471 12.578 2.807 12.254 3.995 11.606 5.182 10.958 6.1 10.054 6.748 8.907 7.423 7.787 7.773 6.505 7.773 5.074 7.773 3.671 7.423 2.389 6.748 1.242 6.1.121 5.182-.756 3.995-1.404 2.807-2.051 1.471-2.375 0-2.375"/>,
+  <path key="U" transform="matrix(1,0,0,-1,531.7781,720)" d="M0 0C-2.024 0-3.59.553-4.696 1.673-5.817 2.821-6.37 4.44-6.37 6.532V14.737H-3.671V6.64C-3.671 3.792-2.456 2.375 0 2.375 2.443 2.375 3.671 3.792 3.671 6.64V14.737H6.316V6.532C6.316 4.44 5.749 2.821 4.643 1.673 3.522.553 1.97 0 0 0"/>,
+  <path key="N1" transform="matrix(1,0,0,-1,567.2527,705.2628)" d="M0 0V-14.521H-2.213L-10.203-4.696V-14.521H-12.902V0H-10.689L-2.699-9.825V0Z"/>,
+  <path key="T" transform="matrix(1,0,0,-1,586.59,707.53)" d="M0 0H-4.804V2.267H7.504V0H2.699V-12.254H0Z"/>,
+  <path key="I" transform="matrix(1,0,0,-1,0,1080)" d="M608.579 374.737H611.27798V360.216H608.579Z"/>,
+  <path key="N2" transform="matrix(1,0,0,-1,640.5729,705.2628)" d="M0 0V-14.521H-2.213L-10.203-4.696V-14.521H-12.902V0H-10.689L-2.699-9.825V0Z"/>,
+  <path key="G" transform="matrix(1,0,0,-1,666.8739,712.3885)" d="M0 0H2.537V-5.776C1.781-6.356.891-6.802-.108-7.126-1.08-7.45-2.092-7.612-3.131-7.612-4.616-7.612-5.938-7.288-7.126-6.64-8.313-5.992-9.258-5.115-9.933-3.995-10.621-2.848-10.958-1.565-10.958-.162-10.958 1.269-10.621 2.551-9.933 3.671-9.258 4.818-8.313 5.722-7.126 6.37-5.938 7.018-4.616 7.342-3.131 7.342-1.916 7.342-.796 7.126.216 6.694 1.215 6.289 2.051 5.722 2.699 4.966L1.026 3.293C-.094 4.4-1.431 4.966-2.969 4.966-4.022 4.966-4.939 4.75-5.722 4.319-6.518 3.887-7.153 3.266-7.612 2.483-8.043 1.727-8.259.837-8.259-.162-8.259-1.107-8.043-1.97-7.612-2.753-7.153-3.509-6.518-4.13-5.722-4.589-4.939-5.02-4.035-5.236-3.023-5.236-1.876-5.236-.864-4.993 0-4.481Z"/>,
+];
+
+const vb = "345 355 380 370";
+
+export default function Preloader({ onComplete }) {
+  const [phase, setPhase] = useState("loading");
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setPhase("reveal"), 2600);
+    const t2 = setTimeout(() => {
+      setPhase("done");
+      onComplete?.();
+    }, 3200);
+    return () => { clearTimeout(t1); clearTimeout(t2); };
+  }, [onComplete]);
+
+  return (
+    <AnimatePresence>
+      {phase !== "done" && (
+        <motion.div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0D0F12]"
+          exit={{ y: "-100%", transition: { duration: 0.7, ease: [0.76, 0, 0.24, 1] } }}
+        >
+          {/* Background grid */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-[0.03]"
+            style={{
+              backgroundImage: `linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
+              backgroundSize: "60px 60px",
+            }}
+          />
+
+          {/* Radial glow */}
+          <motion.div
+            className="absolute rounded-full"
+            style={{
+              width: 500, height: 500,
+              background: "radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%)",
+              filter: "blur(80px)",
+            }}
+            animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Logo SVG with staggered reveals */}
+          <div className="relative flex flex-col items-center">
+            <svg
+              viewBox={vb}
+              fill="white"
+              className="h-24 sm:h-32 md:h-40"
+              style={{ width: "auto" }}
+              aria-label="ZER(O) ACCOUNTING"
+            >
+              {/* Z - slides up */}
+              <motion.g
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {logoPaths.Z}
+              </motion.g>
+
+              {/* E - slides up */}
+              <motion.g
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {logoPaths.E}
+              </motion.g>
+
+              {/* R - slides up */}
+              <motion.g
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {logoPaths.R}
+              </motion.g>
+
+              {/* Opening bracket - swings in from left */}
+              <motion.g
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {logoPaths.bracketOpen}
+              </motion.g>
+
+              {/* O - scales in */}
+              <motion.g
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.85, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                style={{ transformOrigin: "650px 520px" }}
+              >
+                {logoPaths.O}
+              </motion.g>
+
+              {/* Closing bracket - swings in from right */}
+              <motion.g
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {logoPaths.bracketClose}
+              </motion.g>
+
+              {/* ACCOUNTING letters - stagger in */}
+              {accountingPaths.map((p, i) => (
+                <motion.g
+                  key={i}
+                  initial={{ opacity: 0, y: 5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.2 + i * 0.04, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {p}
+                </motion.g>
+              ))}
+            </svg>
+
+            {/* Accent line sweep under logo */}
+            <motion.div
+              className="mt-4 h-[2px] bg-accent"
+              initial={{ width: 0 }}
+              animate={{ width: "100%" }}
+              transition={{ delay: 1.8, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            />
+          </div>
+
+          {/* Loading bar at bottom */}
+          <motion.div className="absolute bottom-10 left-1/2 h-[1px] -translate-x-1/2 overflow-hidden w-40 bg-white/10 rounded-full">
+            <motion.div
+              className="h-full bg-white/60 rounded-full"
+              initial={{ x: "-100%" }}
+              animate={{ x: "0%" }}
+              transition={{ duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}

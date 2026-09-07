@@ -1,3 +1,5 @@
+import TiltCard from "./TiltCard.jsx";
+import SplitText from "./SplitText.jsx";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal.jsx";
@@ -16,6 +18,7 @@ export default function Stats() {
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
           {items.map((stat, index) => (
             <ScrollReveal key={stat.label} delay={index * 0.08}>
+              <TiltCard intensity={8}>
               <motion.div
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -31,6 +34,7 @@ export default function Stats() {
                   {stat.label}
                 </div>
               </motion.div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

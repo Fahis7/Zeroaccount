@@ -1,3 +1,4 @@
+import SplitText from "./SplitText.jsx";
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -49,7 +50,7 @@ export default function Testimonials() {
             {t("home.testimonials.label")}
           </p>
           <h2 className="mt-4 font-display text-display-lg text-ink dark:text-white">
-            {t("home.testimonials.heading")}
+            <SplitText text={t("home.testimonials.heading")} className="justify-center" stagger={0.03} />
           </h2>
           <p className="mt-4 text-muted dark:text-[#9A9FA5]">{t("home.testimonials.subtitle")}</p>
         </ScrollReveal>

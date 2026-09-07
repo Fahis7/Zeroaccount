@@ -1,3 +1,5 @@
+import SplitText from "./SplitText.jsx";
+import MagneticButton from "./MagneticButton.jsx";
 import { motion, useMotionValue, useSpring, useTransform, useInView } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useRef, useEffect, useState } from "react";
@@ -253,13 +255,17 @@ export default function Hero() {
         {/* ─── Staircase Headline ── */}
         <h1 className="mt-8 font-display text-display-xl text-white">
           {lines.map((line, index) => (
-            <motion.span
+            <span
               key={line}
-              variants={item}
               className={`block ${index === lines.length - 1 ? "text-accent" : ""}`}
             >
-              {line}
-            </motion.span>
+              <SplitText
+                text={line}
+                delay={0.4 + index * 0.25}
+                stagger={0.04}
+                className="justify-center"
+              />
+            </span>
           ))}
         </h1>
 
@@ -270,18 +276,22 @@ export default function Hero() {
 
         {/* ─── Buttons ── */}
         <motion.div variants={item} className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            to="/contact"
-            className="clip-corner bg-accent px-7 py-3.5 font-display text-xs uppercase tracking-wide text-accent-contrast shadow-glow transition-transform hover:-translate-y-0.5 hover:bg-accent-deep"
-          >
-            {t("home.hero.cta1")}
-          </Link>
-          <a
-            href="#services"
-            className="clip-corner border border-white/20 px-7 py-3.5 font-display text-xs uppercase tracking-wide text-white transition-colors hover:border-white/40"
-          >
-            {t("home.hero.cta2")}
-          </a>
+          <MagneticButton>
+            <Link
+              to="/contact"
+              className="clip-corner inline-block bg-accent px-7 py-3.5 font-display text-xs uppercase tracking-wide text-accent-contrast shadow-glow transition-transform hover:-translate-y-0.5 hover:bg-accent-deep"
+            >
+              {t("home.hero.cta1")}
+            </Link>
+          </MagneticButton>
+          <MagneticButton>
+            <a
+              href="#services"
+              className="clip-corner inline-block border border-white/20 px-7 py-3.5 font-display text-xs uppercase tracking-wide text-white transition-colors hover:border-white/40"
+            >
+              {t("home.hero.cta2")}
+            </a>
+          </MagneticButton>
         </motion.div>
 
         {/* ─── Stats ── */}

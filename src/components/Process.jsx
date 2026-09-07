@@ -1,3 +1,4 @@
+import SplitText from "./SplitText.jsx";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal.jsx";
@@ -13,7 +14,7 @@ export default function Process() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollReveal className="mx-auto max-w-2xl text-center">
           <p className="font-display text-xs uppercase tracking-widest text-accent">{t("home.process.label")}</p>
-          <h2 className="mt-4 font-display text-display-lg text-white">{t("home.process.heading")}</h2>
+          <h2 className="mt-4 font-display text-display-lg text-white"><SplitText text={t("home.process.heading")} className="justify-center" stagger={0.03} /></h2>
           <p className="mt-4 text-white/60">{t("home.process.subtitle")}</p>
         </ScrollReveal>
 

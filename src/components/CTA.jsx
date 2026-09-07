@@ -1,3 +1,5 @@
+import SplitText from "./SplitText.jsx";
+import MagneticButton from "./MagneticButton.jsx";
 import { useTranslation } from "react-i18next";
 import ScrollReveal from "./ScrollReveal.jsx";
 import AmbientBackground from "./AmbientBackground.jsx";
@@ -28,14 +30,16 @@ export default function CTA() {
             ))}
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-white/70">{t("home.cta.subtitle")}</p>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noreferrer"
-            className="clip-corner mt-9 inline-block bg-accent px-8 py-4 font-display text-xs uppercase tracking-wide text-accent-contrast shadow-glow transition-transform hover:-translate-y-0.5 hover:bg-accent-deep"
-          >
-            {t("home.cta.button")}
-          </a>
+          <MagneticButton className="mt-9">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noreferrer"
+              className="clip-corner inline-block bg-accent px-8 py-4 font-display text-xs uppercase tracking-wide text-accent-contrast shadow-glow transition-transform hover:-translate-y-0.5 hover:bg-accent-deep"
+            >
+              {t("home.cta.button")}
+            </a>
+          </MagneticButton>
         </ScrollReveal>
       </div>
     </section>

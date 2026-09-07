@@ -1,3 +1,4 @@
+import SplitText from "./SplitText.jsx";
 import { motion, useMotionValue, useSpring, useTransform, useInView, useReducedMotion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useRef, useEffect, useState } from "react";
@@ -400,7 +401,7 @@ export default function WhyZero() {
               {t("home.why.label")}
             </p>
             <h2 className="mt-4 font-display text-display-lg text-ink dark:text-white">
-              {t("home.why.heading")}
+              <SplitText text={t("home.why.heading")} stagger={0.03} />
             </h2>
           </ScrollReveal>
 

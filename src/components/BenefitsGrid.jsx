@@ -1,3 +1,4 @@
+import TiltCard from "./TiltCard.jsx";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal.jsx";
 
@@ -23,6 +24,7 @@ export default function BenefitsGrid({ items, columns = 3 }) {
     <div className={`grid grid-cols-1 gap-5 ${columnClasses[columns] ?? columnClasses[3]}`}>
       {items.map((benefit, index) => (
         <ScrollReveal key={benefit.title} delay={index * 0.06}>
+          <TiltCard intensity={8}>
           <motion.div
             whileHover={{ y: -6, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 400, damping: 25 }}
@@ -54,6 +56,7 @@ export default function BenefitsGrid({ items, columns = 3 }) {
               </p>
             </div>
           </motion.div>
+          </TiltCard>
         </ScrollReveal>
       ))}
     </div>

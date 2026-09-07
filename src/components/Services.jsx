@@ -1,3 +1,5 @@
+import SplitText from "./SplitText.jsx";
+import TiltCard from "./TiltCard.jsx";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -90,7 +92,7 @@ export default function Services() {
             {t("home.services.label")}
           </p>
           <h2 className="mt-4 font-display text-display-lg text-ink dark:text-white">
-            {t("home.services.heading")}
+            <SplitText text={t("home.services.heading")} className="justify-center" stagger={0.03} />
           </h2>
           <p className="mt-4 text-muted dark:text-[#9A9FA5]">{t("home.services.subtitle")}</p>
         </ScrollReveal>

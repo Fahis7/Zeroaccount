@@ -1,3 +1,4 @@
+import MagneticButton from "./MagneticButton.jsx";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -168,14 +169,16 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <LanguageToggle onDark={!scrolled} />
           <ThemeToggle onDark={!scrolled} />
-          <Link
-            to="/contact"
-            className={`clip-corner-sm bg-accent px-5 py-2 font-display text-xs uppercase tracking-wide text-accent-contrast shadow-glow transition-all hover:bg-accent-deep ${
-              scrolled ? "" : "on-dark"
-            }`}
-          >
-            {t("nav.cta")}
-          </Link>
+          <MagneticButton strength={0.2}>
+            <Link
+              to="/contact"
+              className={`clip-corner-sm inline-block bg-accent px-5 py-2 font-display text-xs uppercase tracking-wide text-accent-contrast shadow-glow transition-all hover:bg-accent-deep ${
+                scrolled ? "" : "on-dark"
+              }`}
+            >
+              {t("nav.cta")}
+            </Link>
+          </MagneticButton>
         </div>
 
         {/* ─── Mobile controls: language + theme + hamburger, always visible ─── */}
